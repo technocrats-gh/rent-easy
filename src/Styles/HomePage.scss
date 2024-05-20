@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
+
+body{
+  background: rgb(34,193,195);
+  background: linear-gradient(90deg, rgba(34,193,195,1) 20%,     rgba(253,187,45,1) 100%);
+}
+.home-page{
+  margin-left: 8.5rem;
+  transition: margin-left 500ms ease-in-out;
+}
+.push-home-page{
+  margin-left: 22rem;
+  transition: margin-left 500ms ease-in-out;
+}
+
+.header{
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
+
+.searchInput{
+  height: 3rem;
+  width: 35rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "CostarBrownLight";
+  // width: calc(100% - 0.5rem);
+  font-size: 1.25rem;
+  margin-right: 0.2rem;
+}
+.search-button{
+  height: 3rem;
+  width: 5rem;
+  border-radius: 0.5rem;
+  background-color: #427b01;
+  border-color: #427b01;
+  color: #fff;
+  border:none;
+}
+.search-bar{
+  display: flex;
+}
+.greetings{
+  font-family: "CostarBrownLight";
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+// .card-main{
+//   display: grid;
+//   grid-template-columns: 4, 1fr;
+//   gap: 15px;
+//   padding: 15px;
+// }
+
+
+.card-grid-container {
+  // display: grid; /* Enables grid layout */
+  // grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  // gap: 16px; /* Space between grid items */
+  // padding: 20px; /* Padding around the grid */
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 20px;
+}
+
+.card {
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden;
+  width: 350px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(12, 12, 12, 0.1); /* Shadow for elevation */
+  transition: transform 0.4s; /* Smooth transition on hover */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+.aspect-video {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.aspect-video img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio while covering */
+}
+
+.card-body {
+  padding: 16px; /* Padding inside the card */
+}
+
+.card-title {
+  font-size: 1.2rem; /* Font size for the title */
+  font-weight: 600;
+  margin-bottom: 8px; /* Margin below the title */
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a4a4a; /* Subtitle color */
+  margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+// .card-grid-container{
+//   display: grid ;
+//   grid-template-columns: repeat(3, 1fr) ;
+//   gap: 10px;
+//   margin: 10px 20px ;
+//   // display: inline-block;
+//   // margin: 10px 20px;
+// }
+// .card {
+//   border-radius: 8px;
+//   overflow: hidden;
+//   background-color: white;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   transition: transform 0.3s;
+//   width: 550px;
+// }
+
+// /* Add a hover effect to each card */
+// .card:hover {
+//   transform: translateY(-5px);
+// }
+
+// /* Aspect video */
+// .aspect-video {
+//   position: relative;
+//   padding-top: 56.25%; /* 16:9 aspect ratio */
+//   overflow: hidden;
+// }
+
+// /* Image within aspect video */
+// .aspect-video img {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+// /* Card body */
+// .card-body {
+//   padding: 16px;
+// }
+
+// /* Card title */
+// .card-title {
+//   font-size: 1.2rem;
+//   font-weight: 600;
+//   margin-bottom: 8px;
+// }
+
+// /* Card subtitle */
+// .card-subtitle {
+//   font-size: 1rem;
+//   font-weight: 500;
+//   color: #4a4a4a;
+//   margin-bottom: 4px;
+// }
+
+// /* Description */
+.line-clamp-3 {
+  font-size: 0.9rem;
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+// /* Price */
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6347; /* Change color as desired */
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
