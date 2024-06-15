@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../Styles/HomePage.scss'
 
+
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
 
@@ -18,7 +19,7 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setQuery(e.target.value)}
         className='searchInput'
       />
-      <button className='search-button' type="submit">Search</button>
+      <button className='search-button pi pi-search' type="submit"></button>
     </form>
   );
 }

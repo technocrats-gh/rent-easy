@@ -12,15 +12,17 @@ import { Auth0Provider } from '@auth0/auth0-react';
 // import '././Styles/Transition.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const providerConfig = {
+  domain: process.env.REACT_APP_AUTH0_DOMAIN,
+  clientId: process.env.REACT_APP_AUTH0_CLIENT_ID,
+  authorizationParams: {
+    redirect_uri: "http://localhost:3000/HomePage"
+  }
+}
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-    domain="dev-pqr614mkxxyjjop0.us.auth0.com"
-    clientId="569D1C1CH8taFkAzhIj1jQVNvICzISlW"
-    authorizationParams={{
-      redirect_uri: "http://localhost:3000/HomePage"
-    }}
-    >
+    <Auth0Provider {...providerConfig}>
     <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />

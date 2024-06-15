@@ -9,8 +9,7 @@ function HomePage() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-};
-console.log(isMenuOpen);
+  };
   // Handle search queries
   const handleSearch = (query) => {
     console.log('Search query:', query);
