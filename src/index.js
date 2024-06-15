@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "primeflex/primeflex.css"
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import 'primeicons/primeicons.css';
 import StartLogin from './components/StartLogin';
 import AuthLogin from './components/Login';
 import LandingPage from './components/landingPage';

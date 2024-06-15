@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SearchBar from './searchBar';
 import Hamburger from './Hamburger';
 import Card from './card';
+import { Menubar } from 'primereact/menubar';
+// import { Card } from 'primereact/card'
 import '../../Styles/HomePage.scss'
 
 function HomePage() {
@@ -19,15 +21,15 @@ function HomePage() {
   return (
     <div className={isMenuOpen ? "push-home-page" : "home-page"}>
       <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
+      <Menubar className='menubar' />
       <div className='header'>
-        <h3 className="greetings">Your New Home Awaits</h3>
         <div className='search'>
           <SearchBar onSearch={handleSearch} />
         </div>
+        <span className="greetings">Best available deals</span>
       </div>
-      <div className='card-main'>
         <Card />
-      </div>
+
     </div>
   );
 }

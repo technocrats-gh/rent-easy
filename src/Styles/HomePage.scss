@@ -12,15 +12,20 @@ body{
   margin-left: 22rem;
   transition: margin-left 500ms ease-in-out;
 }
-
+.menubar{
+  height: 2.5rem;
+  width: 98%;
+}
 .header{
   height: 3.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5rem;
-  margin-bottom: 8rem;
+  align-items: start;
+  // align-content: flex-start;
+  justify-content: start;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-left: 1.3rem;
 }
 
 .searchInput{
@@ -47,26 +52,18 @@ body{
 }
 .greetings{
   font-family: "CostarBrownLight";
-  font-size: 3.5rem;
+  font-size: 1.5rem;
   color: #fff;
+  margin-top: 0.8rem;
 }
 
-// .card-main{
-//   display: grid;
-//   grid-template-columns: 4, 1fr;
-//   gap: 15px;
-//   padding: 15px;
-// }
 
 
 .card-grid-container {
-  // display: grid; /* Enables grid layout */
-  // grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  // gap: 16px; /* Space between grid items */
-  // padding: 20px; /* Padding around the grid */
-  display: inline-block;
-  margin: 5px 5px;
-  padding: 20px;
+  display: grid; /* Enables grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 26px; /* Space between grid items */
+  padding: 20px; /* Padding around the grid */
 }
 
 .card {
@@ -88,30 +85,34 @@ body{
   overflow: hidden;
 }
 
-.aspect-video img {
+.aspect-video img{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Maintain aspect ratio while covering */
+  // border: solid 0.5px black ;
 }
 
 .card-body {
-  padding: 16px; /* Padding inside the card */
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding-top: 10px; /* Padding inside the card */
 }
 
 .card-title {
   font-size: 1.2rem; /* Font size for the title */
   font-weight: 600;
-  margin-bottom: 8px; /* Margin below the title */
+  // margin-bottom: 8px; /* Margin below the title */
 }
 
 .card-subtitle {
   font-size: 1rem;
   font-weight: 500;
   color: #4a4a4a; /* Subtitle color */
-  margin-bottom: 4px;
+  // margin-bottom: 4px;
 }
 
 
@@ -191,6 +192,7 @@ body{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  margin-bottom: 2px;
 }
 
 // /* Price */
@@ -198,6 +200,7 @@ body{
   font-size: 1rem;
   font-weight: bold;
   color: #ff6347; /* Change color as desired */
+  margin-top: 1.5px;
 }
 
 /* Responsive styling */

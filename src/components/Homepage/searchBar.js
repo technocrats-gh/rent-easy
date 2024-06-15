@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../Styles/HomePage.scss'
+import { Button } from 'primereact/button';
 
 
 function SearchBar({ onSearch }) {
@@ -19,7 +20,7 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setQuery(e.target.value)}
         className='searchInput'
       />
-      <button className='search-button pi pi-search' type="submit"></button>
+      <Button className='search-button pi pi-search' type="submit"></Button>
     </form>
   );
 }
