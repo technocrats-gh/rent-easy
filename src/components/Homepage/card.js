@@ -8,7 +8,7 @@ import apartment2 from '../../images/apartment_Images/and2.jpg'
 import apartment1 from '../../images/apartment_Images/and1.jpg'
 import { Card } from 'primereact/card';
 
-const listingCard = () => {
+const listingCard = ({ isMenuOpen }) => {
   // Dummy data for listings
   const listings = [
     { id: 1, image: apartment1, title: 'One Bedroom Self-Contain', description: 'Description 1', price: 500, location: 'Sunayni' },
@@ -16,7 +16,9 @@ const listingCard = () => {
     { id: 3, image: apartment3, title: 'One Bedroom Self-Contain', description: 'Description 3', price: 170, location: 'Race Course' },
     { id: 4, image: apartment4, title: 'Chamber and Hall', description: 'Description 4', price: 660, location: 'Pantang' },
     { id: 5, image: apartment5, title: '2 Bedroom Apartment', description: 'Description 5', price: 1110, location: 'Suame' },
-    { id: 6, image: apartment7, title: 'One Bedroom Self-Contain', description: 'Description 6', price: 520, location: 'Oyarifa' },
+    { id: 6, image: apartment7, title: '3 Bedroom Apartment', description: 'Description 6', price: 520, location: 'Oyarifa' },
+    { id: 7, image: apartment7, title: 'Studio Apartment', description: 'Description 6', price: 820, location: 'Dompoase' },
+    { id: 8, image: apartment7, title: 'One Bedroom Self-Contain', description: 'Description 6', price: 520, location: 'Penkwase' },
     // Add more listings as needed
   ];
 
@@ -38,7 +40,8 @@ const listingCard = () => {
     </div>
   ));
 
-  return <div className="card-grid-container">{shownCards}</div>;
+  // return <div >{shownCards}</div>;
+  return <div className={isMenuOpen ? 'home-card-push' : 'card-grid-container '}>{shownCards}</div>;
 };
 
 export default listingCard;

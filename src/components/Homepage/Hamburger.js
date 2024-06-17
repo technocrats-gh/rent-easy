@@ -5,10 +5,10 @@ import LogoutButton from './LogOut';
 import Profile from './profile';
 
 function HamburgerMenu({toggleMenu, isMenuOpen}) {
-    const [state, setState]= useState({
-        username:"Amankwah Amoako",
-        email:"andarmaas3@gmail.com",
-    });
+    // const [state, setState]= useState({
+    //     username:"Amankwah Amoako",
+    //     email:"andarmaas3@gmail.com",
+    // });
   
     return (
     <div>

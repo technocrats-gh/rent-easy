@@ -2,19 +2,85 @@
 
 body{
   background: rgb(34,193,195);
-  background: linear-gradient(90deg, rgba(34,193,195,1) 20%,     rgba(253,187,45,1) 100%);
+  // background: linear-gradient(90deg, rgba(34,193,195,1) 20%,     rgba(253,187,45,1) 100%);
+  width: fit-content;
+  height: fit-content;
 }
 .home-page{
-  margin-left: 8.5rem;
+  // margin-left: 3.5rem;
   transition: margin-left 500ms ease-in-out;
 }
 .push-home-page{
-  margin-left: 22rem;
-  transition: margin-left 500ms ease-in-out;
+  width: fit-content;
+  height: fit-content;
+  // margin-left: 11.5rem;
+  // margin-right: -2rem;
+  // transition: margin-left 500ms ease-in-out;
+  
+  .push-img-logo{
+    width: 2rem;
+    height: 2rem;
+    background-color: #C1C1C9;
+    border-radius: 50%;
+    margin-left: 18rem;
+    transition: margin-left 500ms ease-in-out;
+    margin-top: 0.8rem;
+  }
+
+  .push-profile{
+    margin-right: 1rem;
+    transition: margin-right 500ms ease-in-out;
+  }
+  .header-push{
+    margin-left: 23rem;
+    margin-top: 3rem;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  // align-content: flex-start;
+   justify-content: start;
+  //  margin-top: 3rem;
+   margin-bottom: 2rem;
+  // margin-left: 1.3rem;
+    // margin-left: 11rem;
+  }
+  .home-card-push{
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid; /* Enables grid layout */
+    // grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 16px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    margin-left: 22rem;
+    // margin-left: 1rem;
+  }
+  .services-push{
+      // display: flex;
+      // align-items: start;
+      // justify-content: start;
+      // width: 55rem;
+      height: fit-content;
+      margin-top: 2rem;
+      margin-left: 23rem;
+      margin-bottom: 1rem;
+    
+  }
+  .contact-push{
+    padding-bottom: 1rem;
+    height: 10rem;
+    margin-left: 23rem;
+  }
 }
 .menubar{
-  height: 2.5rem;
-  width: 98%;
+  height: 3rem;
+  width: 113%;
+  position: sticky;
+  top:0;
+  z-index: 1000;
+  margin-left: 0.1rem;
+  padding-bottom: 3rem;
+  // margin-right: -3rem;
 }
 .header{
   height: 3.5rem;
@@ -25,7 +91,8 @@ body{
   justify-content: start;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  margin-left: 1.3rem;
+  // margin-left: 1.3rem;
+  margin-left: 11rem;
 }
 
 .searchInput{
@@ -57,14 +124,23 @@ body{
   margin-top: 0.8rem;
 }
 
-
-
+// .home-card{
+//   display: grid; /* Enables grid layout */
+//   grid-template-columns: repeat(4, 1fr); /* 4 columns */
+//   gap: 16px; /* Space between grid items */
+//   padding: 20px; /* Padding around the grid */
+//   margin-left: 10rem;
+// }
 .card-grid-container {
   display: grid; /* Enables grid layout */
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 26px; /* Space between grid items */
+  gap: 16px; /* Space between grid items */
   padding: 20px; /* Padding around the grid */
+  margin-left: 10rem;
 }
+//  .home-card{
+//   margin-left: 10rem;
+//  }
 
 .card {
   border-radius: 8px; /* Rounded corners */
@@ -108,11 +184,49 @@ body{
   // margin-bottom: 8px; /* Margin below the title */
 }
 
-.card-subtitle {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #4a4a4a; /* Subtitle color */
-  // margin-bottom: 4px;
+.img-logo{
+  width: 2rem;
+  height: 2rem;
+  background-color: #C1C1C9;
+  border-radius: 50%;
+  margin-left: 1.7rem;
+  margin-top: 0.8rem;
+  transition: margin-left 500ms ease-in-out;
+}
+// .push-img-logo{
+//   width: 2rem;
+//   height: 2rem;
+//   background-color: #C1C1C9;
+//   border-radius: 50%;
+//   margin-left: 6rem;
+//   transition: margin-left 500ms ease-in-out;
+//   margin-top: 0.8rem;
+// }
+.profile{
+  margin-left: 1px;
+  transition: margin-left 500ms ease-out-in;
+}
+
+// .push-profile{
+//   margin-right: 13rem;
+//   transition: margin-right 500ms ease-in-out;
+// }
+
+.services{
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // width: 55rem;
+  height: fit-content;
+  margin-top: 2rem;
+  margin-left: 11rem;
+  margin-bottom: 1rem;
+}
+
+.contact{
+  padding-bottom: 1rem;
+  height: 10rem;
+  margin-left: 11rem;
 }
 
 
@@ -120,69 +234,6 @@ body{
 
 
 
-
-
-
-
-
-// .card-grid-container{
-//   display: grid ;
-//   grid-template-columns: repeat(3, 1fr) ;
-//   gap: 10px;
-//   margin: 10px 20px ;
-//   // display: inline-block;
-//   // margin: 10px 20px;
-// }
-// .card {
-//   border-radius: 8px;
-//   overflow: hidden;
-//   background-color: white;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//   transition: transform 0.3s;
-//   width: 550px;
-// }
-
-// /* Add a hover effect to each card */
-// .card:hover {
-//   transform: translateY(-5px);
-// }
-
-// /* Aspect video */
-// .aspect-video {
-//   position: relative;
-//   padding-top: 56.25%; /* 16:9 aspect ratio */
-//   overflow: hidden;
-// }
-
-// /* Image within aspect video */
-// .aspect-video img {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
-
-// /* Card body */
-// .card-body {
-//   padding: 16px;
-// }
-
-// /* Card title */
-// .card-title {
-//   font-size: 1.2rem;
-//   font-weight: 600;
-//   margin-bottom: 8px;
-// }
-
-// /* Card subtitle */
-// .card-subtitle {
-//   font-size: 1rem;
-//   font-weight: 500;
-//   color: #4a4a4a;
-//   margin-bottom: 4px;
-// }
 
 // /* Description */
 .line-clamp-3 {
@@ -205,13 +256,18 @@ body{
 
 /* Responsive styling */
 @media (max-width: 1024px) {
-  .grid {
+  .card-grid-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
 }
 
 @media (max-width: 640px) {
-  .grid {
+  .card-grid-container {
     grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
+@media (max-width: 1900px) {
+  .card-grid-container {
+    grid-template-columns: repeat(5, 1fr) /* 1 column on very small screens */
   }
 }
