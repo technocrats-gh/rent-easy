@@ -3,45 +3,46 @@
 body{
   background: rgb(34,193,195);
   // background: linear-gradient(90deg, rgba(34,193,195,1) 20%,     rgba(253,187,45,1) 100%);
-  width: fit-content;
-  height: fit-content;
+  // width: fit-content;
+  // height: fit-content;
 }
 .home-page{
   // margin-left: 3.5rem;
   transition: margin-left 500ms ease-in-out;
+  overflow: hidden;
 }
 .push-home-page{
   width: fit-content;
   height: fit-content;
-  // margin-left: 11.5rem;
+  margin-left: 11.5rem;
   // margin-right: -2rem;
   // transition: margin-left 500ms ease-in-out;
-  
+  overflow: hidden;
   .push-img-logo{
     width: 2rem;
     height: 2rem;
     background-color: #C1C1C9;
     border-radius: 50%;
-    margin-left: 18rem;
+    margin-left: 6rem;
     transition: margin-left 500ms ease-in-out;
     margin-top: 0.8rem;
   }
 
   .push-profile{
-    margin-right: 1rem;
+    margin-right: 12rem;
     transition: margin-right 500ms ease-in-out;
   }
   .header-push{
-    margin-left: 23rem;
-    margin-top: 3rem;
+    margin-left: 9.9rem;
+    margin-top: 5rem;
     height: 3.5rem;
     display: flex;
     flex-direction: column;
     align-items: start;
   // align-content: flex-start;
-   justify-content: start;
+    justify-content: start;
   //  margin-top: 3rem;
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
   // margin-left: 1.3rem;
     // margin-left: 11rem;
   }
@@ -52,7 +53,7 @@ body{
     // grid-template-columns: repeat(4, 1fr); /* 4 columns */
     gap: 16px; /* Space between grid items */
     padding: 20px; /* Padding around the grid */
-    margin-left: 22rem;
+    margin-left: 9rem;
     // margin-left: 1rem;
   }
   .services-push{
@@ -66,16 +67,16 @@ body{
       margin-bottom: 1rem;
     
   }
-  .contact-push{
+  .footer-push{
     padding-bottom: 1rem;
-    height: 10rem;
-    margin-left: 23rem;
+    height: 6rem;
+    margin-left: 7rem;
   }
 }
 .menubar{
   height: 3rem;
-  width: 113%;
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top:0;
   z-index: 1000;
   margin-left: 0.1rem;
@@ -89,10 +90,10 @@ body{
   align-items: start;
   // align-content: flex-start;
   justify-content: start;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   // margin-left: 1.3rem;
-  margin-left: 11rem;
+  margin-left: 6rem;
 }
 
 .searchInput{
@@ -123,6 +124,11 @@ body{
   color: #fff;
   margin-top: 0.8rem;
 }
+.footer-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 // .home-card{
 //   display: grid; /* Enables grid layout */
@@ -136,12 +142,13 @@ body{
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   gap: 16px; /* Space between grid items */
   padding: 20px; /* Padding around the grid */
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
-//  .home-card{
-//   margin-left: 10rem;
-//  }
+.footer{
+  width: 100%;
+  height: 6rem;
 
+}
 .card {
   border-radius: 8px; /* Rounded corners */
   overflow: hidden;
@@ -223,14 +230,18 @@ body{
   margin-bottom: 1rem;
 }
 
-.contact{
-  padding-bottom: 1rem;
-  height: 10rem;
-  margin-left: 11rem;
+// .footer{
+//   // padding-bottom: 1rem;
+//   // height: 10rem;
+//   // margin-left: 6rem;
+// }
+
+
+.logo-footer{
+  border-radius: 50% ;
+  width: 2.5rem;
+  height: 2.5rem;
 }
-
-
-
 
 
 

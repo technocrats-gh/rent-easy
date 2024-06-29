@@ -12,6 +12,7 @@ import AuthLogin from './components/Login';
 import LandingPage from './components/landingPage';
 import SignUpPage from './components/SignUp';
 import HomePage from './components/Homepage/index'
+import { Agents } from './components/pages/agents';
 import { Auth0Provider } from '@auth0/auth0-react';
 // import '././Styles/Transition.scss'
 
@@ -32,6 +33,7 @@ root.render(
           <Route path="/" element={<LandingPage />} />
           <Route path="/SignUp" element={<SignUpPage />} />
           <Route path="/HomePage" element={<HomePage />} />
+          <Route path="/pages/agents" element={<Agents />} />
         </Routes>
     </Router>
     </Auth0Provider>

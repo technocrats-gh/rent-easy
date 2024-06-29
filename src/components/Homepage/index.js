@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import SearchBar from './searchBar';
-import Hamburger from './Hamburger';
-import Services from './services';
 import Card from './card';
-import Profile from './profile';
-import Contact from './contact';
-import { Menubar } from 'primereact/menubar';
-import logo from '../../images/easy.png'
-// import { Card } from 'primereact/card'
+import { Footer } from '../footer';
+import { Header } from '../header';
 import '../../Styles/HomePage.scss'
 
 function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  console.log(isMenuOpen);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -22,21 +17,9 @@ function HomePage() {
     // Add search logic here (e.g., filter listings based on query)
   };
 
-  const menu = () => {
-    return <div style={{ display: 'flex', cursor: 'pointer', marginTop: '2.1rem' }}>
-      <Hamburger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-      <img src={logo} alt='Renteasy_logo' className={isMenuOpen ? "push-img-logo" : "img-logo"} />
-    </div>
-  }
-  const end = () => {
-    return <div className={isMenuOpen ? "push-profile" : "profile"} style={{ cursor: 'pointer', marginTop: '2.1rem' }}>
-      <Profile />
-    </div>
-  } 
-
   return (
     <div className={isMenuOpen ? "push-home-page" : "home-page"}>
-      <Menubar className='menubar' start={menu} end={end} />
+      <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
       <div className={isMenuOpen ? 'header-push' : 'header'}>
         <div className='search'>
           <SearchBar onSearch={handleSearch} />
@@ -47,15 +30,15 @@ function HomePage() {
         <Card isMenuOpen={isMenuOpen} />
       </div>
       <div className={isMenuOpen ? 'services-push' : 'services'}>
-        <Services />
+        {/* <Services /> */}
+
       </div>
-      <div className={isMenuOpen ? 'contact-push' : 'contact'}>
-        <Contact />
+      <div className={isMenuOpen ? 'footer-push' : 'footer'}>
+        {/* <Contact /> */}
+        <Footer />
       </div>
     </div>
   );
 }
 
 export default HomePage;
-
-
