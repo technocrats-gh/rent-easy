@@ -8,7 +8,7 @@ import apartment2 from '../../images/apartment_Images/and2.jpg'
 import apartment1 from '../../images/apartment_Images/and1.jpg'
 import { Card } from 'primereact/card';
 
-const listingCard = ({ isMenuOpen }) => {
+const listingCard = ({ isMenuOpenu }) => {
   // Dummy data for listings
   const listings = [
     { id: 1, image: apartment1, title: 'One Bedroom Self-Contain', description: 'Description 1', price: 500, location: 'Sunayni' },
@@ -41,7 +41,7 @@ const listingCard = ({ isMenuOpen }) => {
   ));
 
   // return <div >{shownCards}</div>;
-  return <div className={isMenuOpen ? 'home-card-push' : 'card-grid-container '}>{shownCards}</div>;
+  return <div className='card-grid-container '>{shownCards}</div>;
 };
 
 export default listingCard;

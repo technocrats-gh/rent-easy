@@ -5,20 +5,17 @@ import { Card } from 'primereact/card'
 import '../../Styles/HomePage.scss'
 import '../../Styles/agents.scss'
 
-export const Agents = (props) => {
-  const { toggleMenu, isMenuOpen } = props
-  console.log(isMenuOpen);
+export const Agents = () => {
   return (
     <div>
-      <Header />
       <div className='agents-card-main' >
         <Card className='agent-card'>
           agents, are welcome
         </Card>
       </div>
-      <div className={isMenuOpen ? 'footer-push' : 'footer'}>
+      {/* <div className='footer'>
         <Footer />
-      </div>
+      </div> */}
     </div>
   )
 }
