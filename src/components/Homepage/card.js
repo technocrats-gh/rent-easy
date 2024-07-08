@@ -23,7 +23,7 @@ const listingCard = ({ isMenuOpenu }) => {
   ];
 
   const shownCards = listings.map((item) => (
-    <div key={item.id}>
+    <div key={item.id} className='card-div'>
       <Card className="card overflow-hidden">
         <div className="aspect-video">
           <img

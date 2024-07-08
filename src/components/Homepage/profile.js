@@ -1,4 +1,5 @@
 import React from "react";
+import '../../Styles/HomePage.scss'
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Profile = () => {
@@ -14,8 +15,8 @@ const Profile = () => {
         <span style={{display:"flex", gap:"10px"}}>
           <img src={user.picture} alt={user.name} className='img-shadow' />
           <span style={{ display: "flex", flexDirection: "column", marginTop: "5px" }}>
-            <span style={{fontSize:"16px"}}>{user.name}</span>
-            <span style={{fontSize:"11px"}}>{user.email}</span>
+            <span className='profile-name' >{user.name}</span>
+            <span className='profile-email'>{user.email}</span>
           </span>
         </span>
       </div>

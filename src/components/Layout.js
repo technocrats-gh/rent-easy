@@ -6,7 +6,6 @@ import '../Styles/HomePage.scss'
 
 const Layout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
-  console.log(isMenuOpen);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

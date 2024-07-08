@@ -19,12 +19,12 @@ export const Header = (props) => {
         </label>
 
         <ul className="menu__box">
-          <li><div className="menu__item"><Profile /></div></li>
-          <li><Link className="menu__item" to="/HomePage"><i className='pi pi-home mr-2 mt-2' />Homepage</Link></li>
-          <li><a className="menu__item"><i className='pi pi-user mr-2 mt-2' />Profile</a></li>
-          <li><Link className="menu__item" to='/pages/agents' ><i className='pi pi-users mr-2 mt-2' />Agents</Link></li>
-          <li><a className="menu__item"><i className='pi pi-cog mr-2 mt-2' />Settings</a></li>
-          <li><a className="menu__item "><i className='pi pi-sign-out mr-2 mt-2' /><LogoutButton /></a></li>
+          <li><Link className="menu__item" to="/HomePage"><i className='pi pi-home mr-2 mt-2' /><span className="side-text">Homepage</span></Link></li>
+          <li><a className="menu__item"><i className='pi pi-user mr-2 mt-2' /><span className="side-text">Profile</span></a></li>
+          <li><Link className="menu__item" to='/pages/agents' ><i className='pi pi-users mr-2 mt-2' /><span className="side-text">Agents</span></Link></li>
+          <li><a className="menu__item"><i className='pi pi-cog mr-2 mt-2' /><span className="side-text">Settings</span></a></li>
+          <li><span className="menu__item "><i className='pi pi-sign-out mr-2 mt-2' /><span className="side-text"><LogoutButton /></span></span></li>
+          {/* <li><div className="menu__item"><span className="profile-text"><Profile /></span></div></li> */}
         </ul>
       </div>
     )
