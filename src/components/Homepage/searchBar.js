@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../../Styles/HomePage.scss'
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
+
 
 
 function SearchBar({ onSearch }) {
@@ -13,14 +15,14 @@ function SearchBar({ onSearch }) {
 
   return (
     <form onSubmit={handleSearch} className="search-bar">
-      <input
+      <InputText
         type="text"
-        placeholder="Search for listings..."
+        placeholder="search eg: 1 bedroom apartment"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className='searchInput'
       />
-      <Button className='search-button pi pi-search' type="submit"></Button>
+      {query && <i className='search-button pi pi-search search-icon' type="submit" onClick={handleSearch}></i>}
     </form>
   );
 }

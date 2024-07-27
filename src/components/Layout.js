@@ -14,7 +14,7 @@ const Layout = () => {
   return (
     <div className='home-page'>
       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      <main className={isMenuOpen ? 'push-main' : "main-content"}>
+      <main className="main-content">
         <Outlet />
       </main>
       <Footer isMenuOpen={isMenuOpen} />

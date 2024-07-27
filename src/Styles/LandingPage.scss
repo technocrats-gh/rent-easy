@@ -1,10 +1,35 @@
 /* Start Global Rules */
-body{
-  background: rgb(34,193,195);
-  background: linear-gradient(135deg, rgba(34,193,195,1) 50%,     rgba(253,187,45,1) 100%);
-  font-family: "CostarBrownLight, sans-serif, sans-serif";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
+.your-class {
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  // background: rgb(34,193,195);
+  background: linear-gradient(180deg, #78997b, transparent);  
+  height: 100%;
+  // background: linear-gradient(135deg, rgba(34,193,195,1) 50%,     rgba(253,187,45,1) 100%);
+  // font-family: "CostarBrownLight, sans-serif, sans-serif";
+}
+.logo-txt{
+  // @include fontStyle("Poppins", 14px, #666678);
+  font-family: 'Poppins';
+  font-weight: bolder;    
+  font-size: 23px;
+  color: #FFF;
+  margin: 7px 0 -4px 0;
+}
+.logo-txt-2{
+  font-family: 'Poppins';
+  color: #FFF;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
 * {
   box-sizing: border-box;
 }
@@ -18,8 +43,8 @@ ul {
   margin: 0;
 }
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  // padding-left: 15px;
+  // padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -38,7 +63,7 @@ ul {
 /* Large */
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1770px;
   }
 }
 /* End Global Rules */
@@ -55,9 +80,10 @@ ul {
   }
 }
 .landing-page header .container {
+  margin-top: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // align-items: center;
+  // justify-content: space-between;
 }
 @media (max-width: 767px) {
   .landing-page header .container {
@@ -81,6 +107,8 @@ ul {
 .landing-page header .links {
   display: flex;
   align-items: center;
+  margin-left: auto;
+  font-family: 'Poppins';
 }
 @media (max-width: 767px) {
   .landing-page header .links {
@@ -90,7 +118,7 @@ ul {
 }
 .landing-page header .links li {
   margin-left: 30px;
-  color: #5d5d5d;
+  color: #FFF;
   cursor: pointer;
   transition: .3s;
 }
@@ -99,21 +127,81 @@ ul {
     margin-left: auto;
   }
 }
+.btn{
+  border: none;
+    background-color: #fff;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #48924F;
+}
+.first-title{
+  color: white;
+  font-family: 'Poppins';
+  font-weight: bolder;
+  font-size: 4rem;
+}
+.second-title{
+  color: #7d7d7d;
+  font-family: poppins;
+  font-size: 1.5rem;
+  display: block;
+}
+.info{
+  margin-bottom: 5rem;
+}
+.footer{
+  background-color: #fff;
+  width: auto;
+  height: 21vh;
+  display: flex;
+  justify-content: space-around;
+  margin-left: -30px;
+}
+.footer-items{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.titles{
+  font-family: 'Poppins';
+  color: #7d7d7d;
+  font-size: 20px;
+  font-weight: bold;
+  // width: 7rem;
+}
+.item{
+  width: 27rem;
+  font-family: 'Poppins';
+  display: flex;
+  flex-direction: column;
+  // margin-bottom: 25px;
+}
+.item:first-child{
+  // margin-left: 0.25rem;
+}
+.img-icons{
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 25px;
+}
 .landing-page header .links li:last-child {
-  border-radius: 20px;
-  padding: 10px 20px;
-  color: #FFF;
-  background-color: #6c63ff;
+  border-radius: 7rem;
+  padding: 7px 14px;
+  color: #48924F;
+  background-color: #fdfdfd;
+  font-weight: bolder;
+  font-size: 14px;
 }
 .landing-page header .links li:not(:last-child):hover {
-  color: #6c63ff;
+  color: #48924F;
 }
 .landing-page .content .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 140px;
-  min-height: calc(100vh - 80px);
+  // min-height: calc(100vh - 80px);
+  height: 71vh;
 }
 @media (max-width: 767px) {
   .landing-page .content .container {
@@ -154,8 +242,9 @@ ul {
 .image{
   border-radius: 10px;
   display: inline-block;
+  margin-bottom: 5rem;
   padding: 15px; /* Adjust the padding as desired */
-  background: linear-gradient(to top, transparent, rgba(108, 99, 255))
+  // background: linear-gradient(to top, transparent, rgba(108, 99, 255))
 }
 .logo {
   display: flex; /* Use flexbox for alignment */
@@ -165,9 +254,12 @@ ul {
 }
 .logo-img {
   /* Your styles for the logo image */
-  width: 50px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
-  margin-right: 1px;
-  border-radius: 30%;
+  // width: 50px; /* Adjust as needed */
+  // height: 50px; /* Adjust as needed */
+  // margin-right: 1px;
+  // border-radius: 30%;
+  width: 55px;
+    height: 55px;
+    margin: 4px 0 0 0;
 }
 /* End Landing Page */

@@ -24,7 +24,8 @@ const providerConfig = {
   clientId: process.env.REACT_APP_AUTH0_CLIENT_ID,
   authorizationParams: {
     redirect_uri: "http://localhost:3000/HomePage"
-  }
+  },
+  cacheLocation: "localstorage"
 }
 root.render(
   <React.StrictMode>
@@ -33,7 +34,7 @@ root.render(
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path='/' element={<Layout />}>
-            <Route path="/SignUp" element={<SignUpPage />} />
+            <Route path="/LogIn" element={<StartLogin />} />
             <Route path="/HomePage" element={<HomePage />} />
             <Route path="/pages/agents" element={<Agents />} />
           </Route>
