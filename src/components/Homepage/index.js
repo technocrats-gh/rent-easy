@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import SearchBar from './searchBar';
-import Card from './card';
+import CardTemp from './card';
 import { Dropdown } from 'primereact/dropdown';
+import { Card } from 'primereact/card';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import '../../Styles/HomePage.scss'
 
 function HomePage() {
   const [selectedCity, setSelectedCity] = useState(null);
-  const [selectedAgent, setSelectedAgent] = useState(null);
+  // const [selectedAgent, setSelectedAgent] = useState(null);
   const cities = [
     { name: 'North East', code: 'NST' },
     { name: 'Western North', code: 'WNT' },
@@ -27,14 +28,14 @@ function HomePage() {
     { name: 'Bono', code: 'BO' },
   ];
 
-  const agents = [
-    { name: "Ato Jumper", age: "29", region: "Oti" },
-    { name: "Sam Korkoi", age: "49", region: "Oti" },
-    { name: "Harry Pumber", age: "33", region: "Oti" },
-    { name: "Samkeel Azor", age: "28", region: "Oti" },
-    { name: "Kuran mohammed", age: "39", region: "Oti" },
-    { name: "Asibey banahene", age: "32", region: "Oti" },
-  ]
+  // const agents = [
+  //   { name: "Ato Jumper", age: "29", region: "Oti" },
+  //   { name: "Sam Korkoi", age: "49", region: "Oti" },
+  //   { name: "Harry Pumber", age: "33", region: "Oti" },
+  //   { name: "Samkeel Azor", age: "28", region: "Oti" },
+  //   { name: "Kuran mohammed", age: "39", region: "Oti" },
+  //   { name: "Asibey banahene", age: "32", region: "Oti" },
+  // ]
 
   // Handle search queries
   const handleSearch = (query) => {
@@ -48,8 +49,8 @@ function HomePage() {
           <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" editable
             placeholder="Select a Region" />
 
-          <Dropdown value={selectedAgent} onChange={(e) => setSelectedAgent(e.value)} options={agents} optionLabel="name"
-            placeholder="Select an Agent" />
+          {/* <Dropdown value={selectedAgent} onChange={(e) => setSelectedAgent(e.value)} options={agents} optionLabel="name"
+            placeholder="Select an Agent" /> */}
 
           <SearchBar onSearch={handleSearch} />
         </div>
@@ -58,9 +59,11 @@ function HomePage() {
         </div>
         <span className="greetings">Best available deals</span> */}
       </div>
-      <div >
-        <Card />
-      </div>
+      <Card className='home-card'>
+        <div className='display-card'>
+          <CardTemp />
+        </div>
+      </Card>
     </div>
 
   );

@@ -5,19 +5,19 @@ import { Footer } from "./footer";
 import '../Styles/HomePage.scss'
 
 const Layout = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  // const [isMenuOpen, setIsMenuOpen] = useState(true);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
 
   return (
     <div className='home-page'>
-      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <Header />
       <main className="main-content">
         <Outlet />
       </main>
-      <Footer isMenuOpen={isMenuOpen} />
+      <Footer />
     </div>)
 }
 

@@ -4,10 +4,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 import '../../Styles/LandingPage.scss'
 
 const LogoutButton = () => {
+  // localStorage.removeItem(userRentEasy)
   const { logout } = useAuth0();
 
+  const handleLogOut = () => {
+    localStorage.removeItem("userRentEasy")
+    logout({ logoutParams: { returnTo: "http://localhost:3000/" } })
+  } 
+
   return (
-    <button className="btn" onClick={() => logout({ logoutParams: { returnTo: "http://localhost:3000/" } })}>
+    <button className="btn" onClick={handleLogOut}>
       Log Out
     </button>
   );

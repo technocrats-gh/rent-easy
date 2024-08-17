@@ -14,10 +14,26 @@ import LandingPage from './components/landingPage';
 import SignUpPage from './components/SignUp';
 import HomePage from './components/Homepage/index'
 import { Agents } from './components/pages/agents';
+import { Listings } from './components/pages/listings';
+import { Register } from './components/pages/register';
+import { SettingsProfile } from './components/pages/profile';
 import { Auth0Provider } from '@auth0/auth0-react';
+// import { store, rrfProps } from './Redux/store';
+import { Provider } from 'react-redux';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { store, rrfConfig } from './Redux/store'; // Adjust the path as needed
+import { app } from './firebase'; // Adjust the path as needed
+import { createFirestoreInstance } from 'redux-firestore';
 // import '././Styles/Transition.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const rrfProps = {
+  firebase: app,
+  config: rrfConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance // Needed if using Firestore
+};
 
 const providerConfig = {
   domain: process.env.REACT_APP_AUTH0_DOMAIN,
@@ -30,16 +46,23 @@ const providerConfig = {
 root.render(
   <React.StrictMode>
     <Auth0Provider {...providerConfig}>
-    <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path='/' element={<Layout />}>
-            <Route path="/LogIn" element={<StartLogin />} />
-            <Route path="/HomePage" element={<HomePage />} />
-            <Route path="/pages/agents" element={<Agents />} />
-          </Route>
-        </Routes>
-    </Router>
+      <Provider store={store}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <Router>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path='/' element={<Layout />}>
+                <Route path="/LogIn" element={<StartLogin />} />
+                <Route path="/HomePage" element={<HomePage />} />
+                <Route path="/pages/agents" element={<Agents />} />
+                <Route path="/pages/listings" element={<Listings />} />
+                <Route path="/pages/register" element={<Register />} />
+                <Route path="/pages/profile" element={<SettingsProfile />} />
+              </Route>
+            </Routes>
+          </Router>
+        </ReactReduxFirebaseProvider>
+      </Provider>
     </Auth0Provider>
   </React.StrictMode>
 );

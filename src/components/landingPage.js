@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/LandingPage.scss'
 import StartLogin from './StartLogin';
-import happyFamily from '../images/HappyFamily.jpeg'
 import apartImg from '../images/apart img.png'
 import logo from '../images/easyR.png'
 import callIcon from '../images/phone.png'
 import emailIcon from '../images/email.png'
 import locationIcon from '../images/locs.png'
-// import logo from '../images/rentEasy22.png'
-// import logo from '../images/easy.png'
+import { AgentDialog } from '../utils/dialog';
 import { Link } from 'react-router-dom';
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+    const [agentVisible, setAgentVisible] = useState(false);
+    const onHide = () => setAgentVisible(false);
+
     return (
         <div className="landing-page">
             <header>
@@ -25,7 +26,7 @@ const LandingPage = () => {
                     </div>
                     <ul className="links">
                         <li><Link to="/HomePage">Home</Link></li>
-                        <li>Agents</li>
+                        <li onClick={() => setAgentVisible(true)}>Agents</li>
                         <li>Contact Us</li>
                         <li> <StartLogin /></li> 
                     </ul>
@@ -36,7 +37,6 @@ const LandingPage = () => {
                     <div className="info">
                         <span className='first-title'>Looking For A Place to Call Home?</span>
                         <span className='second-title'>Get a favorable home space from just a click on your phone. No more stress and long talk</span>
-                        {/* <StartLogin /> */}
                     </div>
                     <div className="image">
                         <img src={apartImg} alt="Apartment Image" />
@@ -67,7 +67,13 @@ const LandingPage = () => {
                     </span>
                 </div>
             </div>
+            <AgentDialog
+                agentVisible={agentVisible}
+                setAgentVisible={setAgentVisible}
+                onHide={onHide}
+            />
         </div>
+
     );
 };
 

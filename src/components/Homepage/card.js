@@ -9,12 +9,14 @@ import apartment1 from '../../images/apartment_Images/and1.jpg'
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog';
+import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
+import { FileUpload } from 'primereact/fileupload'
 
-
-
-const listingCard = ({ isMenuOpenu }) => {
+const listingCard = (props) => {
+  const { label } = props;
   const [visible, setVisible] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
   // Dummy data for listings
   const listings = [
     { id: 1, image: apartment1, title: 'One Bedroom Self-Contain', description: 'Description 1', price: 500, location: 'Sunayni' },
@@ -28,6 +30,18 @@ const listingCard = ({ isMenuOpenu }) => {
     // Add more listings as needed
   ];
 
+  const opts = [
+    { id: 1, name: "Bathroom" },
+    { id: 2, name: "Hall" },
+    { id: 3, name: "Kitchen" },
+    { id: 4, name: "Washroom" },
+    { id: 5, name: "Entrance" },
+    { id: 6, name: "Bedroom" },
+    { id: 7, name: "Other" },
+    { id: 8, name: "Other" },
+    { id: 9, name: "Other" },
+  ]
+
   const shownCards = listings.map((item) => (
     <div key={item.id} className='card-div'>
       <Card className="card overflow-hidden">
@@ -40,7 +54,7 @@ const listingCard = ({ isMenuOpenu }) => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", rowGap: '5px' }}>
           <span className="card-subtitle">{`GHS ${item.price.toFixed(2)}/M`}</span>
-          <Button className='bookbtn' label='Book Now' onClick={() => setVisible(true)} />
+          <Button className='bookbtn' label={label ? label : 'Book Now'} onClick={() => setVisible(true)} />
         </div>
       </Card>
     </div>
@@ -49,28 +63,50 @@ const listingCard = ({ isMenuOpenu }) => {
   const onHide = () => {
     setVisible(false)
   }
+  function uploadContainers() {
+    return <div>
+      <div className='edit-upload-divs'>
+        {/* <p className='upload-title'>{title}</p> */}
+      </div>
+      <FileUpload mode='basic' className='edit-upload-btn' chooseLabel='upload' />
+    </div>
+  }
   // return <div >{shownCards}</div>;
   return <div>
     <span className='card-grid-container '>
       {shownCards}
     </span>;
-    <Dialog visible={visible} header="Book An Appointment" onHide={onHide}
+    <Dialog visible={visible} header={label ? "Edit Listing" : "Book An Appointment"} onHide={onHide}
     >
       <div style={{ display: 'flex', flexDirection: "column" }}>
-        <label className='label'>Name</label>
-        <InputText id='name' placeholder="name" className='book-inputs' />
-        <label className='label'>Phone Number</label>
-        <InputText label='PhoneNumber' placeholder="Phone Number" className='book-inputs' />
-        <label className='label'>Location</label>
+        <label className='label'>{label ? 'Description' : 'Name'}</label>
+        <InputText placeholder={label ? 'description' : 'name'} className='book-inputs' />
+
+        <label className='label'>{label ? 'Price' : 'Phone Number'}</label>
+        <InputText label='PhoneNumber' placeholder={label ? 'price' : "Phone Number"} className='book-inputs' />
+
+        {!label ? (<><label className='label'>Location</label>
         <InputText label='Location' placeholder="Location" className='book-inputs' />
+
         <label className='label'>Prefered Calling Time</label>
         <InputText label='' placeholder="8am-5pm" className='book-inputs' />
+
         <label className='label'>Pay For Agent to Call</label>
         <InputText label='' placeholder="Pay Calling fee" className='book-inputs' />
+
         <label className='label'>Message</label>
-        <InputText label='' placeholder="Message" className='book-inputs' />
+          <InputText label='' placeholder="Message" className='book-inputs' /></>)
+          :
+          (<>
+            <label className='label'>Upload New Image</label>
+            <Dropdown label='' placeholder="Select here" className='edit-book-inputs' options={opts} value={selectedValue} onChange={(e) => setSelectedValue(e.value)} optionLabel='name'
+            />
+            {uploadContainers()}
+          </>)
+        }
       </div>
-      <Button label='Book' className='DibkBtn' />
+      {!label ? <Button label='Book' className='DibkBtn' />
+        : <Button label='Save' className='DiSvBtn' />}
     </Dialog>
   </div>
 };
