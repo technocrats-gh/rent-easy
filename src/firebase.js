@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import config from './components/config';
-import { addDoc, collection, getDocs, doc, deleteDoc, setDoc, getDoc } from 'firebase/firestore'
+import { addDoc, collection, getDocs, doc, deleteDoc, setDoc, getDoc, updateDoc } from 'firebase/firestore'
 
 // Initialize Firebase
 const app = initializeApp(config);
@@ -42,4 +42,22 @@ const fetchAgentData = async () => {
 
 };
 
-export { app, db, storage, fetchAgentData, handleRegister };
+//update agent's profile Data on the collection on firebase
+const updateAgentData = async (updatedData) => {
+  const dataFromLocalStorage = localStorage.getItem("userRentEasy");
+  const userData = JSON.parse(dataFromLocalStorage);
+  const userId = userData?.sub;
+
+  const userDocRef = doc(db, 'agentUsers', userId);
+  const userDoc = await getDoc(userDocRef);
+
+  if (userDoc.exists()) {
+    updateDoc(userDocRef, updatedData)
+      .then(() => {
+        alert("Profile data updated successfully")
+      })
+  }
+
+};
+
+export { app, db, storage, fetchAgentData, handleRegister, updateAgentData };

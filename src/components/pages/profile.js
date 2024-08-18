@@ -5,11 +5,14 @@ import '../../Styles/settings.scss'
 import { Loading } from '../../utils/loading'
 // import { fetchAgentData } from '../../firebase'
 // import FirebaseStates from '../../firebaseStates'
-import { fetchAgentData } from '../../firebase'
+import { fetchAgentData, updateAgentData } from '../../firebase'
 import { Button } from 'primereact/button'
 import { InputText } from 'primereact/inputtext'
+import { useNavigate } from 'react-router-dom';
 
 export const SettingsProfile = () => {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
     agentDataSuccess: {},
     agentDataLoading: true,
@@ -38,7 +41,6 @@ export const SettingsProfile = () => {
 
   }
 
-  // console.log(state.agentDataSuccess);
 
   const editAgentInfo = (label, value, stateData, placeholder) => {
     return (<div className='flex mb-4' style={{ alignItems: "start", justifyContent: "start", flexDirection: "column" }}>
@@ -67,6 +69,8 @@ export const SettingsProfile = () => {
     } else {
       // Handle saving the data here, e.g., updating Firebase
       console.log("Save the data", state.editData);
+      updateAgentData(state.editData)
+      navigate('/pages/listings');
     }
   }
 
@@ -103,39 +107,11 @@ export const SettingsProfile = () => {
               </div>
             )}
 
-            {/* {state.btnClicked ? editAgentInfo("name", "name", state.editData.name, "Name")
-              : <div className='profile-label'><span style={{ fontWeight: "400" }}>Name: </span>{state.agentDataSuccess?.name ? state.agentDataSuccess?.name : '--'}</div>}
-
-            {state.btnClicked ? editAgentInfo("age", "age", state.editData.age, "Age")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>Age: </span>{state.agentDataSuccess?.age ? state.agentDataSuccess?.age : '--'}</div>}
-
-            {state.btnClicked ? editAgentInfo("region", "region", state.editData.region, "Region")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>Region: </span>{state.agentDataSuccess?.region ? state.agentDataSuccess?.region : '--'}
-              </div>}
-
-            {state.btnClicked ? editAgentInfo("agentId", "agentId", state.editData.agentId, "ID")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>AgentID: </span>{state.agentDataSuccess?.agentId ? state.agentDataSuccess?.agentId : '--'}
-              </div>}
-
-            {state.btnClicked ? editAgentInfo("gender", "gender", state.editData.gender, "Gender")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>Gender: </span>{state.agentDataSuccess?.gender ? state.agentDataSuccess?.gender : '--'}
-              </div>}
-
-            {state.btnClicked ? editAgentInfo("email", "email", state.editData.email, "Email")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>Email: </span>{state.agentDataSuccess?.email ? state.agentDataSuccess?.email : '--'}
-              </div>}
-
-            {state.btnClicked ? editAgentInfo("phoneNo", "phoneNo", state.editData.phoneNo, "PhoneNumber")
-              :
-              <div className='profile-label'><span style={{ fontWeight: "400" }}>Phone Number: </span>{state.agentDataSuccess?.phoneNo ? state.agentDataSuccess?.phoneNo : '--'}
-              </div>} */}
-
-            <Button className='saveEditBtn' onClick={handleSave} >
+              <Button
+                className='saveEditBtn'
+                onClick={handleSave}
+                type={state.btnClicked ? "submit" : "button"}
+              >
               {state.btnClicked ? "Save" : "Edit"}
             </Button>
           </section>)}
