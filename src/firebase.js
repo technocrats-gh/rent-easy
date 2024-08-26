@@ -1,7 +1,8 @@
 // import React, { useCallback } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+// import { getStorage } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import config from './components/config';
 import { addDoc, collection, getDocs, doc, deleteDoc, setDoc, getDoc, updateDoc } from 'firebase/firestore'
 
@@ -53,11 +54,46 @@ const updateAgentData = async (updatedData) => {
 
   if (userDoc.exists()) {
     updateDoc(userDocRef, updatedData)
-      .then(() => {
-        alert("Profile data updated successfully")
-      })
   }
 
 };
 
-export { app, db, storage, fetchAgentData, handleRegister, updateAgentData };
+//add an agent profile pic to firestore
+const uploadAgentProfilePic = async (file) => {
+  const dataFromLocalStorage = localStorage.getItem("userRentEasy");
+  const userData = JSON.parse(dataFromLocalStorage);
+  const userId = userData?.sub;
+
+  // const storage = getStorage();
+  const storageRef = ref(storage, `agentProfilePics/${userId}`);
+
+  // Upload the file to the specified reference
+  const snapshot = await uploadBytes(storageRef, file)
+
+  const downloadURL = await getDownloadURL(snapshot.ref);
+
+  // console.log(downloadURL);
+  localStorage.setItem(`agentProfilePic:${userId}`, downloadURL);
+  // Get the download URL
+  // const downloadURL = await getDownloadURL(storageRef);
+
+  // return downloadURL;
+
+};
+
+//get agent profile picture from firestore
+const getAgentLogo = () => {
+  const dataFromLocalStorage = localStorage.getItem("userRentEasy");
+  const userData = JSON.parse(dataFromLocalStorage);
+  const userId = userData?.sub;
+
+  // Retrieve the logo URL from localStorage using the userId as the key
+  const userLogo = localStorage.getItem(`agentProfilePic:${userId}`);
+  console.log(userLogo);
+};
+
+export {
+  app, db, storage, fetchAgentData,
+  handleRegister, updateAgentData,
+  uploadAgentProfilePic, getAgentLogo
+};

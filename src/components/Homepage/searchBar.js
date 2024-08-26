@@ -4,13 +4,12 @@ import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 
 
-
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, listingPage, listSearch }) {
   const [query, setQuery] = useState('');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch(query);
+    listingPage ? listSearch(query) : onSearch(query);
   };
 
   return (
@@ -20,7 +19,7 @@ function SearchBar({ onSearch }) {
         placeholder="search Agent Name, Appartment description etc..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className='searchInput'
+        className={listingPage ? "search-listings" : 'searchInput'}
       />
       {query && <i className='search-button pi pi-search search-icon' type="submit" onClick={handleSearch}></i>}
     </form>
