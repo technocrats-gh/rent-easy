@@ -8,6 +8,8 @@ import { fetchAgentData, updateAgentData, uploadAgentProfilePic, getAgentLogo } 
 import { Button } from 'primereact/button'
 import { InputText } from 'primereact/inputtext'
 import { FileUpload } from 'primereact/fileupload';
+import { useNavigate } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
 
 
 export const SettingsProfile = () => {
@@ -15,6 +17,8 @@ export const SettingsProfile = () => {
   const userData = JSON.parse(dataFromLocalStorage);
   const userId = userData?.sub;
   const logoFromLocaStorage = localStorage.getItem(`agentProfilePic:${userId}`);
+
+  const navigate = useNavigate();
 
   const updateToast = useRef(null);
   const logoUploadToast = useRef(null);
@@ -50,11 +54,41 @@ export const SettingsProfile = () => {
     }
   }, [logoFromLocaStorage])
 
-  const onChangeDetails = (e) => {
-    let { name, value } = e.target
-    setState((state) => ({ ...state, editData: { ...state.editData, [name]: value } }))
+  const formik = useFormik({
+    // initialValues: { email: "", phoneNo: "", agentId: "" },
+    initialValues: state.editData,
+    enableReinitialize: true,
+    validate: values => {
+      const errors = {};
+      if (!values.email) {
+        errors.email = 'Required';
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+        errors.email = 'Invalid email address';
+      }
+      if (!values.phoneNo) {
+        errors.phoneNo = 'Required';
+      } else if (values.phoneNo.length < 10) {
+        errors.phoneNo = 'Phone Number must be at least 10 Numbers';
+      }
+      if (!values.agentId) {
+        errors.agentId = 'Required'
+      } else if (values.agentId.length < 6) {
+        errors.agentId = 'AgentID must be 6 characters';
+      }
+      return errors;
+    },
+    onSubmit: (values) => {
+      updateAgentData(values).then(() => {
+        // fetchAgentData();
+        showUpdate();
+      });
+    }
+  })
 
-  }
+  // const onChangeDetails = (e) => {
+  //   let { name, value } = e.target
+  //   setState((state) => ({ ...state, editData: { ...state.editData, [name]: value } }))
+  // }
 
   const showUpdate = () => {
     updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Profile Update Successful' });
@@ -63,12 +97,20 @@ export const SettingsProfile = () => {
     updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Logo Upload Successful' });
   };
 
-  const editAgentInfo = (label, value, stateData, placeholder) => {
-    return (<div className='flex mb-4' style={{ alignItems: "start", justifyContent: "start", flexDirection: "column" }}>
-      <label className='label-edit'>{label}</label>
-      <InputText placeholder={placeholder} className='input' name={value} value={stateData} onChange={onChangeDetails} />
-    </div>
-    )
+  const editInfo = [
+    { label: "Name", value: "name", stateData: state.editData.name, placeholder: "Name" },
+    { label: "Age", value: "age", stateData: state.editData.age, placeholder: "Age" },
+    { label: "Region", value: "region", stateData: state.editData.region, placeholder: "Region" },
+    { label: "Gender", value: "gender", stateData: state.editData.gender, placeholder: "Gender" },
+    { label: "AgentID", value: "agentId", stateData: state.editData.agentId, placeholder: "AgentID" },
+    { label: "Email", value: "email", stateData: state.editData.email, placeholder: "Email" },
+    { label: "Phone No", value: "phoneNo", stateData: state.editData.phoneNo, placeholder: "Phone No" },
+  ]
+
+  const loadPage = state.agentDataLoading || state.logoLoading;
+
+  const handleCancel = () => {
+    navigate(0);
   }
 
   const handleSave = () => {
@@ -88,10 +130,7 @@ export const SettingsProfile = () => {
         btnClicked: true,
       }));
     } else {
-      // Handle saving the data here, e.g., updating Firebase
-      updateAgentData(state.editData).then(() => {
-        showUpdate()
-      })
+      formik.handleSubmit();
     }
   }
 
@@ -108,42 +147,53 @@ export const SettingsProfile = () => {
   return (
     <div>
       <Toast ref={updateToast} onRemove={() => {
-        window.location.reload()
+        navigate(0);
       }} />
       <Toast ref={logoUploadToast}
         onRemove={() => {
-          // const agentProfilePic = localStorage.getItem('agentProfilePic');
-          // window.location.reload()
+          navigate(0);
         }}
       />
       <div className='profile-main-card'>
         <h1 className='pro-heading'>Profile</h1>
         <Card className='profile-card'>
-          {(state.agentDataLoading || state.logoLoading) ? (
-            <div className='flex' style={{ justifyContent: "center", alignItems: "center", height: "80vh" }}>
+          {loadPage ? (
+            <div>
               <Loading />
             </div>
-          ) : (<section className='p-5'>
-
-            {state.btnClicked ? (
+          ) :
+            (<section className='p-5'>
+              {state.btnClicked ? (
                 <div style={{ marginTop: "2rem" }}>
                   <hr />
                   <span className='notice-text'>Please Save your AgentID safely!!</span>
-                  <p className='notice-text-2'>It will be needed each time to access the Agent pages. Thank you </p>
+                  <p className='notice-text-2'>It will be needed each time to access the Agent pages. It should be a mix of different characters eg: @A&34+K. Thank you ! </p>
                   <hr />
-                {editAgentInfo("Name", "name", state.editData.name, "Name")}
-                {editAgentInfo("Age", "age", state.editData.age, "Age")}
-                {editAgentInfo("Region", "region", state.editData.region, "Region")}
-                {editAgentInfo("Gender", "gender", state.editData.gender, "Gender")}
-                  {editAgentInfo("AgentId", "agentId", state.editData.agentId, "ID")}
-                {editAgentInfo("Email", "email", state.editData.email, "Email")}
-                {editAgentInfo("Phone No", "phoneNo", state.editData.phoneNo, "Phone No")}
+
+                  <form>
+                    {editInfo.map((item, index) => (
+                      <div key={index} className='edit-sec'>
+                        <label className='label-edit'>{item.label}</label>
+                        <InputText
+                          placeholder={item.placeholder}
+                          className='input'
+                          {...formik.getFieldProps(item.value)}
+                        />
+                        {formik.touched[item.value] && formik.errors[item.value] ? (
+                          <div className='error error-msg'>{formik.errors[item.value]}{"*"}</div>
+                        ) : null}
+                      </div>
+                    ))}
+                  </form>
+                  {/* {editInfo.map((item, index) => <div key={index} className='edit-sec mb-4'>
+                    <label className='label-edit'>{item.label}</label>
+                    <InputText placeholder={item.placeholder} className='input' name={item.value} value={item.stateData} onChange={onChangeDetails} />
+                  </div>)} */}
                 </div>
-            ) : (
+              ) : (
               <div>
                 {/* Display the non-editable info */}
                     <div className='flex' >
-
                       {logo ? <img src={logo} className='logo-display' /> : <div className='img-background'></div>}
                       <FileUpload mode='basic' className='logo-upload-btn'
                         auto
@@ -164,13 +214,22 @@ export const SettingsProfile = () => {
                     </section>
               </div>
               )}
-              <Button
-                className='saveEditBtn'
-                onClick={handleSave}
-                type={state.btnClicked ? "submit" : "button"}
-              >
-              {state.btnClicked ? "Save" : "Edit"}
-            </Button>
+              <div className='flex' style={{ justifyContent: "space-between" }}>
+                {state.btnClicked && <Button
+                  onClick={handleCancel}
+                  className='cancelBtn'
+                >Cancel</Button>}
+
+                <Button
+                  className='saveEditBtn'
+                  onClick={handleSave}
+                  // onClick={formik.handleSubmit}
+                  style={{ marginLeft: state.btnClicked ? "0rem" : "41.5rem" }}
+                  type={state.btnClicked ? "submit" : "button"}
+                >
+                  {state.btnClicked ? "Save" : "Edit"}
+                </Button>
+              </div>
           </section>)}
         </Card>
       </div>
