@@ -184,13 +184,14 @@ ul {
   width: 1.5rem;
   margin-bottom: 25px;
 }
-.landing-page header .links li:last-child {
+.style-btn {
   border-radius: 7rem;
   padding: 7px 14px;
   color: #48924F;
   background-color: #fdfdfd;
   font-weight: bolder;
   font-size: 14px;
+  cursor: pointer;
 }
 .landing-page header .links li:not(:last-child):hover {
   color: #48924F;

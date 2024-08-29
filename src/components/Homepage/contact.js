@@ -1,20 +1,20 @@
-import React from 'react'
-import { Card } from 'primereact/card'
+// import React from 'react'
+// import { Card } from 'primereact/card'
 
-const Contact = () => {
+// const Contact = () => {
 
-  const footer = () => {
-    return <p className="text-center mt-12">
-      RentEasy: All Rights Reserved
-    </p>
-  }
+//   const footer = () => {
+//     return <p className="text-center mt-12">
+//       RentEasy: All Rights Reserved
+//     </p>
+//   }
 
-  return (
-    <div>
-      <Card title='Contact Information' footer={footer}>
+//   return (
+//     <div>
+//       <Card title='Contact Information' footer={footer}>
 
-      </Card>
-    </div>
-  )
-}
-export default Contact;
+//       </Card>
+//     </div>
+//   )
+// }
+// export default Contact;

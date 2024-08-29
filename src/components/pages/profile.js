@@ -157,11 +157,7 @@ export const SettingsProfile = () => {
       <div className='profile-main-card'>
         <h1 className='pro-heading'>Profile</h1>
         <Card className='profile-card'>
-          {loadPage ? (
-            <div>
-              <Loading />
-            </div>
-          ) :
+          {loadPage ? <Loading /> :
             (<section className='p-5'>
               {state.btnClicked ? (
                 <div style={{ marginTop: "2rem" }}>
@@ -185,16 +181,13 @@ export const SettingsProfile = () => {
                       </div>
                     ))}
                   </form>
-                  {/* {editInfo.map((item, index) => <div key={index} className='edit-sec mb-4'>
-                    <label className='label-edit'>{item.label}</label>
-                    <InputText placeholder={item.placeholder} className='input' name={item.value} value={item.stateData} onChange={onChangeDetails} />
-                  </div>)} */}
+
                 </div>
               ) : (
               <div>
                 {/* Display the non-editable info */}
                     <div className='flex' >
-                      {logo ? <img src={logo} className='logo-display' /> : <div className='img-background'></div>}
+                      {logo ? <img src={logo} alt='profile picture' className='logo-display' /> : <div className='img-background'></div>}
                       <FileUpload mode='basic' className='logo-upload-btn'
                         auto
                         chooseLabel={logo ? "Change Logo" : 'upload'}
