@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const AgentDialog = (props) => {
   const { agentVisible, setAgentVisible, onHide, hideAgentDia, viewAgent, setViewAgent } = props
   const navigate = useNavigate();
+
+  const data = [
+    { visible: viewAgent, onHide: onHide, },
+    { visible: agentVisible, onHide: hideAgentDia }
+  ]
 
   const moveToAgent = () => {
     navigate('/pages/listings');
@@ -20,7 +25,7 @@ export const AgentDialog = (props) => {
 
   return (
     <div>
-      <Dialog visible={viewAgent ? viewAgent : agentVisible} header="Are you an Agent?" onHide={onHide ? onHide : hideAgentDia} >
+      <Dialog visible={viewAgent ? viewAgent : agentVisible} header="Are you an Agent?" onHide={onHide ? onHide : hideAgentDia} headerClassName="dialog-header" >
         <div style={{ display: 'flex', flexDirection: "column" }}>
           <label className='label'>Enter your ID</label>
           <div className='flex' >

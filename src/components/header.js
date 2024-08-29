@@ -32,7 +32,7 @@ export const Header = () => {
   const menuEnd = () => {
     return <div className="profile" style={{ cursor: 'pointer', marginTop: '2.1rem' }}>
       <ul className="links">
-        <li><Link to="/HomePage"> Home</Link></li>
+        <li onClick={() => navigate("/HomePage")}>Home</li>
         <li onClick={() => setViewAgent(true)}> Agents</li>
         <li onClick={() => setVisible(true)}>Contact Us</li>
         {isLoading ? <span>Loading...</span>
@@ -46,7 +46,7 @@ export const Header = () => {
         </span>
         <br />
         <div style={{ display: "flex", flexDirection: "column", marginTop: "3px" }}>
-          <span className="profile-btn" onClick={() => navigate("/pages/profile")}>Profile</span>
+          <div className="profile-btn" onClick={() => navigate("/pages/profile")}>Profile</div>
           <span className="logout"><LogoutButton /> </span>
         </div>
       </OverlayPanel>
@@ -56,7 +56,7 @@ export const Header = () => {
   return (
     <div>
       <Menubar className="menubar" start={menuStart} end={menuEnd} />
-      <Dialog visible={visible} header="Contact Us" onHide={onHide}
+      <Dialog visible={visible} header="Contact Us" headerClassName="dialog-header" onHide={onHide}
       >
         <div style={{ display: 'flex', flexDirection: "column" }}>
           <label className='label'>Name</label>

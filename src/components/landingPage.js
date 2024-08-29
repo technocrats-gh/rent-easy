@@ -7,12 +7,12 @@ import callIcon from '../images/phone.png'
 import emailIcon from '../images/email.png'
 import locationIcon from '../images/locs.png'
 import { AgentDialog } from '../utils/dialog';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const LandingPage = (props) => {
     const [agentVisible, setAgentVisible] = useState(false);
     const onHide = () => setAgentVisible(false);
-
+    const navigate = useNavigate()
     return (
         <div className="landing-page">
             <header>
@@ -25,10 +25,10 @@ const LandingPage = (props) => {
                         </div>
                     </div>
                     <ul className="links">
-                        <li><Link to="/HomePage">Home</Link></li>
+                        <li onClick={() => navigate("/HomePage")}>Home</li>
                         <li onClick={() => setAgentVisible(true)}>Agents</li>
                         <li>Contact Us</li>
-                        <li> <StartLogin /></li> 
+                        <StartLogin />
                     </ul>
                 </div>
             </header>
