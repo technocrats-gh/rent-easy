@@ -4,22 +4,19 @@ import { Toast } from 'primereact/toast';
 import '../../Styles/HomePage.scss'
 import '../../Styles/settings.scss'
 import { Loading } from '../../utils/loading'
-import { fetchAgentData, updateAgentData, uploadAgentProfilePic, getAgentLogo } from '../../firebase'
+import { UserId } from '../../utils/userId';
+import { fetchAgentData, updateAgentData, uploadAgentProfilePic } from '../../firebase'
 import { Button } from 'primereact/button'
 import { InputText } from 'primereact/inputtext'
 import { FileUpload } from 'primereact/fileupload';
 import { useNavigate } from 'react-router-dom';
-import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 
 export const SettingsProfile = () => {
-  const dataFromLocalStorage = localStorage.getItem("userRentEasy");
-  const userData = JSON.parse(dataFromLocalStorage);
-  const userId = userData?.sub;
+  const userId = UserId();
   const logoFromLocaStorage = localStorage.getItem(`agentProfilePic:${userId}`);
-
   const navigate = useNavigate();
-
   const updateToast = useRef(null);
   const logoUploadToast = useRef(null);
   const [logo, setLogo] = useState(null)
@@ -28,7 +25,8 @@ export const SettingsProfile = () => {
     agentDataSuccess: {},
     agentDataLoading: true,
     agentDataError: false,
-    logoLoading: true,
+    // logoLoading: true,
+    updatingLogo: false,
     editData: {
       name: "",
       age: "",
@@ -55,7 +53,6 @@ export const SettingsProfile = () => {
   }, [logoFromLocaStorage])
 
   const formik = useFormik({
-    // initialValues: { email: "", phoneNo: "", agentId: "" },
     initialValues: state.editData,
     enableReinitialize: true,
     validate: values => {
@@ -72,24 +69,18 @@ export const SettingsProfile = () => {
       }
       if (!values.agentId) {
         errors.agentId = 'Required'
-      } else if (values.agentId.length < 6) {
+      } else if (values.agentId.length !== 6) {
         errors.agentId = 'AgentID must be 6 characters';
       }
       return errors;
     },
     onSubmit: (values) => {
       updateAgentData(values).then(() => {
-        // fetchAgentData();
         showUpdate();
       });
     }
   })
-
-  // const onChangeDetails = (e) => {
-  //   let { name, value } = e.target
-  //   setState((state) => ({ ...state, editData: { ...state.editData, [name]: value } }))
-  // }
-
+  console.log(state.updatingLogo);
   const showUpdate = () => {
     updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Profile Update Successful' });
   };
@@ -107,7 +98,7 @@ export const SettingsProfile = () => {
     { label: "Phone No", value: "phoneNo", stateData: state.editData.phoneNo, placeholder: "Phone No" },
   ]
 
-  const loadPage = state.agentDataLoading || state.logoLoading;
+  const loadPage = state.agentDataLoading || state.logoLoading || state.updatingLogo;
 
   const handleCancel = () => {
     navigate(0);
@@ -140,6 +131,7 @@ export const SettingsProfile = () => {
     if (file === null) return;
     uploadAgentProfilePic(file).then(() => {
       showLogoUpload()
+      setState((state) => ({ ...state, updatingLogo: true }))
     })
 
   }
@@ -186,6 +178,7 @@ export const SettingsProfile = () => {
               ) : (
               <div>
                 {/* Display the non-editable info */}
+                    <hr />
                     <div className='flex' >
                       {logo ? <img src={logo} alt='profile picture' className='logo-display' /> : <div className='img-background'></div>}
                       <FileUpload mode='basic' className='logo-upload-btn'
