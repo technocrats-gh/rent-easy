@@ -1,9 +1,8 @@
-// import React, { useCallback } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import config from './components/config';
-import { UserId } from './utils/userId';
+import { UserId } from './utils/userData';
 import { addDoc, collection, getDocs, doc, deleteDoc, setDoc, getDoc, updateDoc } from 'firebase/firestore'
 
 // Initialize Firebase
@@ -15,8 +14,6 @@ const db = getFirestore(app);
 // Initialize Storage
 const storage = getStorage(app);
 
-//get userID
-const userId = UserId();
 
 //adding docs/agent Registration data to collection
 const handleRegister = async (data) => {
@@ -30,6 +27,10 @@ const handleRegister = async (data) => {
 //retrieve agent registration data from collection
 const fetchAgentData = async () => {
   const userId = UserId();
+  if (!userId) {
+    console.error("UserId is undefined or null");
+    return;
+  }
 
   const userDocRef = doc(db, 'agentUsers', userId);
 

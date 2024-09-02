@@ -6,12 +6,16 @@ import logo from '../images/easyR.png'
 import callIcon from '../images/phone.png'
 import emailIcon from '../images/email.png'
 import locationIcon from '../images/locs.png'
-import { AgentDialog } from '../utils/dialog';
+import { CustomDialog } from '../utils/dialog';
 import { useNavigate, Link } from 'react-router-dom';
 
 const LandingPage = (props) => {
-    const [agentVisible, setAgentVisible] = useState(false);
-    const onHide = () => setAgentVisible(false);
+    // const [agentVisible, setAgentVisible] = useState(false);
+    const [viewLandingContact, setViewLandingContact] = useState(false);
+
+    // const onHide = () => setAgentVisible(false);
+    const hideContactDia = () => setViewLandingContact(false);
+
     const navigate = useNavigate()
     return (
         <div className="landing-page">
@@ -26,8 +30,8 @@ const LandingPage = (props) => {
                     </div>
                     <ul className="links">
                         <li onClick={() => navigate("/HomePage")}>Home</li>
-                        <li onClick={() => setAgentVisible(true)}>Agents</li>
-                        <li>Contact Us</li>
+                        <li >Invest with Us</li>
+                        <li onClick={() => setViewLandingContact(true)}>Contact Us</li>
                         <StartLogin />
                     </ul>
                 </div>
@@ -67,10 +71,15 @@ const LandingPage = (props) => {
                     </span>
                 </div>
             </div>
-            <AgentDialog
+            {/* <CustomDialog
                 agentVisible={agentVisible}
                 setAgentVisible={setAgentVisible}
                 onHide={onHide}
+            /> */}
+            <CustomDialog
+                hideLandingContactDia={hideContactDia}
+                viewLandingContact={viewLandingContact}
+                setLandingContact={setViewLandingContact}
             />
         </div>
 

@@ -10,6 +10,7 @@ const LogoutButton = () => {
   const handleLogOut = () => {
     localStorage.removeItem("userRentEasy")
     localStorage.removeItem("agentProfilePic")
+    localStorage.removeItem("AgentId_Entered")
     logout({ logoutParams: { returnTo: "http://localhost:3000/" } })
   } 
 
