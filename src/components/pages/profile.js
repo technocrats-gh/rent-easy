@@ -4,7 +4,7 @@ import { Toast } from 'primereact/toast';
 import '../../Styles/HomePage.scss'
 import '../../Styles/settings.scss'
 import { Loading } from '../../utils/loading'
-import { UserId } from '../../utils/userId';
+import { UserId } from '../../utils/userData';
 import { fetchAgentData, updateAgentData, uploadAgentProfilePic } from '../../firebase'
 import { Button } from 'primereact/button'
 import { InputText } from 'primereact/inputtext'
@@ -80,12 +80,12 @@ export const SettingsProfile = () => {
       });
     }
   })
-  console.log(state.updatingLogo);
+
   const showUpdate = () => {
-    updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Profile Update Successful' });
+    updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Profile Update Successful', life: "3000" });
   };
   const showLogoUpload = () => {
-    updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Logo Upload Successful' });
+    updateToast.current.show({ severity: 'success', summary: 'Success', detail: 'Logo Upload Successful', life: "3000" });
   };
 
   const editInfo = [

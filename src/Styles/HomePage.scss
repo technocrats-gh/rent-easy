@@ -120,7 +120,7 @@
   height: 48.5rem;
 }
 .profile-card{
-  height: 52rem;
+  // height: 52rem;
   margin: 1rem 35rem 0 35rem;
   width: 51rem;
   // margin-inline: 35rem;
@@ -164,7 +164,8 @@
 }
 .profile-email{
   font-size: 11px;
-  margin-top: -5px;
+  font-family: "Poppins";
+  font-weight: 600;
 }
 .card-grid-container {
   display: flex;
