@@ -13,7 +13,7 @@ import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
 import { FileUpload } from 'primereact/fileupload'
 
-const listingCard = (props) => {
+const ListingCard = (props) => {
   const { label } = props;
   const [visible, setVisible] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
@@ -86,15 +86,15 @@ const listingCard = (props) => {
         <InputText label='PhoneNumber' placeholder={label ? 'price' : "Phone Number"} className='book-inputs' />
 
         {!label ? (<><label className='label'>Location</label>
-        <InputText label='Location' placeholder="Location" className='book-inputs' />
+          <InputText label='Location' placeholder="Location" className='book-inputs' />
 
-        <label className='label'>Prefered Calling Time</label>
-        <InputText label='' placeholder="8am-5pm" className='book-inputs' />
+          <label className='label'>Prefered Calling Time</label>
+          <InputText label='' placeholder="8am-5pm" className='book-inputs' />
 
-        <label className='label'>Pay For Agent to Call</label>
-        <InputText label='' placeholder="Pay Calling fee" className='book-inputs' />
+          <label className='label'>Pay For Agent to Call</label>
+          <InputText label='' placeholder="Pay Calling fee" className='book-inputs' />
 
-        <label className='label'>Message</label>
+          <label className='label'>Message</label>
           <InputText label='' placeholder="Message" className='book-inputs' /></>)
           :
           (<>
@@ -111,4 +111,4 @@ const listingCard = (props) => {
   </div>
 };
 
-export default listingCard;
+export default ListingCard;
