@@ -9,22 +9,18 @@ import "primereact/resources/primereact.min.css";
 import 'primeicons/primeicons.css';
 import Layout from './components/Layout';
 import StartLogin from './components/StartLogin';
-import AuthLogin from './components/Login';
 import LandingPage from './components/landingPage';
-import SignUpPage from './components/SignUp';
 import HomePage from './components/Homepage/index'
 import { Agents } from './components/pages/agents';
 import { Listings } from './components/pages/listings';
 import { Register } from './components/pages/register';
 import { SettingsProfile } from './components/pages/profile';
 import { Auth0Provider } from '@auth0/auth0-react';
-// import { store, rrfProps } from './Redux/store';
 import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { store, rrfConfig } from './Redux/store'; // Adjust the path as needed
 import { app } from './firebase'; // Adjust the path as needed
 import { createFirestoreInstance } from 'redux-firestore';
-// import '././Styles/Transition.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -39,7 +35,7 @@ const providerConfig = {
   domain: process.env.REACT_APP_AUTH0_DOMAIN,
   clientId: process.env.REACT_APP_AUTH0_CLIENT_ID,
   authorizationParams: {
-    redirect_uri: "http://localhost:3000/HomePage"
+    redirect_uri: process.env.REACT_APP_REDIRECT_URI
   },
   cacheLocation: "localstorage"
 }
