@@ -11,7 +11,16 @@ body {
   padding-inline: 1.5rem;
 }
 
+body {
+  // background: rgb(34,193,195);
+  background: linear-gradient(180deg, #78997b, transparent);
+  height: 100%;
+  // background: linear-gradient(135deg, rgba(34,193,195,1) 50%,     rgba(253,187,45,1) 100%);
+  // font-family: "CostarBrownLight, sans-serif, sans-serif";
+}
+
 .logo-txt {
+  // @include fontStyle("Poppins", 14px, #666678);
   font-family: 'Poppins';
   font-weight: bolder;
   font-size: 23px;
@@ -25,6 +34,7 @@ body {
   letter-spacing: 4px;
   font-size: 11px;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -32,18 +42,20 @@ body {
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .container {
   margin-left: auto;
   margin-right: auto;
 }
 
-/*XX Large*/
-@media (max-width: 2560px) {
+/* Small */
+@media (min-width: 768px) {
   .container {
     width: 2560px;
     gap: 140px;
@@ -66,49 +78,6 @@ ul {
   }
 }
 
-/* X Large */
-@media (max-width: 1400px) {
-  .container {
-    width: 1400px;
-  }
-}
-
-/* Large */
-@media (max-width: 1200px) {
-  .container {
-    width: 1200px;
-  }
-}
-@media (max-width: 1188px) {
-  .info{
-    font-size:3.5rem;
-  }
-  .second-title{
-    font-size: 18px;
-  }
-  .item{
-    font-size: 14px;
-    width: 20rem;
-  }
-  .footer-items{
-    max-width: 22rem;
-  }
-  .img-icons{
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 1110px) {
-  .item{
-    font-size: 12px;
-  }
-  .info{
-    font-size:3rem;
-  }
-  .img-icons{
-    margin-bottom: 16px;
-  }
-}
-
 /* Medium */
 @media (max-width: 992px) {
   .container {
@@ -116,7 +85,9 @@ ul {
     gap: 50px;
   }
 }
-@media (max-width: 900px) {
+
+/* Large */
+@media (min-width: 1200px) {
   .container {
     width: 970px;
     gap: 20px;
@@ -142,6 +113,7 @@ ul {
     align-items: flex-start;
   }
 }
+
 /* End Global Rules */
 
 /* Start Landing Page */
@@ -149,12 +121,15 @@ ul {
   min-height: 80px;
   display: flex;
 }
+
 @media (max-width: 767px) {
   .landing-page header {
     min-height: auto;
     display: initial;
+
   }
 }
+
 .landing-page header .container {
   margin-top: 1rem;
   display: flex;
@@ -162,10 +137,16 @@ ul {
 
 @media (max-width: 767px) {
   .landing-page header .container {
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    row-gap: 0.6rem;
+
   }
+
 }
+
 .landing-page header .logo {
   color: #5d5d5d;
   font-style: italic;
@@ -173,77 +154,115 @@ ul {
   font-size: 20px;
   margin-left: 1rem;
 }
+
 @media (max-width: 767px) {
   .landing-page header .logo {
     margin-top: 20px;
     margin-bottom: 20px;
   }
 }
+
 .landing-page header .links {
   display: flex;
   align-items: center;
   margin-left: auto;
   font-family: 'Poppins';
 }
+
+
+
+
+
 @media (max-width: 767px) {
   .landing-page header .links {
     text-align: center;
     gap: 10px;
+    padding-right: 5.7rem;
+    font-size: 16px;
+    column-gap: 1.2rem;
   }
+
+  .login-button {
+    display: none;
+  }
+ 
 }
+
+
+
+
 .landing-page header .links li {
   margin-left: 30px;
   color: #FFF;
   cursor: pointer;
   transition: .3s;
 }
+
 @media (max-width: 767px) {
   .landing-page header .links li {
     margin-left: auto;
   }
 }
-.btn{
+
+.btn {
   border: none;
-    background-color: #fff;
-    font-family: Poppins;
-    font-weight: bold;
-    color: #48924F;
+  background-color: #fff;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #48924F;
 }
-.first-title{
+
+.first-title {
   color: white;
   font-family: 'Poppins';
   font-weight: bolder;
 }
-.second-title{
+
+.second-title {
   color: #7d7d7d;
   font-family: poppins;
   display: block;
 }
-.info{
+
+.info {
   margin-bottom: 5rem;
 }
-.footer{
+
+.footer {
   background-color: #fff;
   width: auto;
   padding-left: 30px;
 }
-.footer-items{
+
+.footer-items {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
-.titles{
+
+.titles {
   font-family: 'Poppins';
   color: #7d7d7d;
   font-size: 20px;
   font-weight: bold;
 }
-.item{
+
+.item {
   width: 27rem;
   font-family: 'Poppins';
   display: flex;
   flex-direction: column;
-  max-width: fit-content;
+  // margin-bottom: 25px;
+}
+
+.item:first-child {
+  // margin-left: 0.25rem;
+}
+
+.img-icons {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 25px;
 }
 
 .style-btn {
@@ -255,9 +274,11 @@ ul {
   font-size: 14px;
   cursor: pointer;
 }
+
 .landing-page header .links li:not(:last-child):hover {
   color: #48924F;
 }
+
 .landing-page .content .container {
   display: flex;
   align-items: center;
@@ -275,25 +296,26 @@ ul {
     justify-content: space-around
   }
 }
+
 @media (max-width: 767px) {
   .landing-page .content .info {
     text-align: center;
-    margin-bottom: 15px 
+    margin-bottom: 15px
   }
 }
-
-//-------------------------------------------------------------------
 
 .landing-page .content .info h1 {
   color: #5d5d5d;
   font-size: 44px;
 }
+
 .landing-page .content .info p {
   margin: 0;
   line-height: 1.6;
   font-size: 15px;
   color: #5d5d5d;
 }
+
 .landing-page .content .info button {
   border: 0;
   border-radius: 20px;
@@ -303,27 +325,43 @@ ul {
   color: #FFF;
   background-color: #6c63ff;
 }
+
 .landing-page .content .image img {
   max-width: 100%;
 }
-.image{
+
+.image {
   border-radius: 10px;
   display: inline-block;
   margin-bottom: 5rem;
-  padding: 15px; /* Adjust the padding as desired */
+  padding: 15px;
+  /* Adjust the padding as desired */
+  // background: linear-gradient(to top, transparent, rgba(108, 99, 255))
 }
+
 .logo {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center the image and text vertically */
-  text-decoration: none; /* Remove default text decoration (underline) */
-  color: inherit; /* Use inherited color */
+  display: flex;
+  /* Use flexbox for alignment */
+  align-items: center;
+  /* Center the image and text vertically */
+  text-decoration: none;
+  /* Remove default text decoration (underline) */
+  color: inherit;
+  /* Use inherited color */
 }
+
 .logo-img {
-    width: 55px;
-    height: 55px;
-    margin: 4px 0 0 0;
+  /* Your styles for the logo image */
+  // width: 50px; /* Adjust as needed */
+  // height: 50px; /* Adjust as needed */
+  // margin-right: 1px;
+  // border-radius: 30%;
+  width: 55px;
+  height: 55px;
+  margin: 4px 0 0 0;
 }
-.OkBtn{
+
+.OkBtn {
   border-radius: 0;
   height: 2.45rem;
   width: 3rem;
@@ -331,7 +369,8 @@ ul {
   background-color: #374151;
   border: none;
 }
-.register{
+
+.register {
   background-color: #fff;
   font-family: Poppins;
   font-weight: bold;
@@ -342,10 +381,12 @@ ul {
   margin: 2px 0 0 34px;
 
 }
-.label-reg{
+
+.label-reg {
   font-family: "Poppins";
-    font-weight: bold;
-    font-size: 10px;
-    margin: 2rem 0 0 3.7rem;
+  font-weight: bold;
+  font-size: 10px;
+  margin: 2rem 0 0 3.7rem;
 }
+
 /* End Landing Page */
