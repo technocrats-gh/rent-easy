@@ -66,6 +66,11 @@ ul {
     width: 1.5rem;
     margin-bottom: 25px;
   }
+  .footer{
+    height: 22vh;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 /* X Large */
@@ -133,6 +138,16 @@ ul {
   .container {
     width: 750px;
     gap: 0px;
+  }
+}
+
+@media (max-width: 746px) {
+  .footer{
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
   }
 }
 /* End Global Rules */
@@ -220,9 +235,6 @@ ul {
 .footer{
   background-color: #fff;
   width: auto;
-  height: 22vh;
-  display: flex;
-  justify-content: space-around;
   margin-left: -30px;
   padding-left: 30px;
 }
