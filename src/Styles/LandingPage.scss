@@ -67,7 +67,7 @@ ul {
     margin-bottom: 25px;
   }
   .footer{
-    height: 22vh;
+    height: auto;
     display: flex;
     justify-content: space-around;
   }
@@ -143,7 +143,6 @@ ul {
 
 @media (max-width: 746px) {
   .footer{
-    height: auto;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
