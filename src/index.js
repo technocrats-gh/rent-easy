@@ -18,8 +18,8 @@ import { SettingsProfile } from './components/pages/profile';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import { store, rrfConfig } from './Redux/store'; // Adjust the path as needed
-import { app } from './firebase'; // Adjust the path as needed
+import { store, rrfConfig } from './Redux/store';
+import { app } from './firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

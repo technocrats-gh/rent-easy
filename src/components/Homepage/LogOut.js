@@ -7,11 +7,12 @@ const LogoutButton = () => {
   // localStorage.removeItem(userRentEasy)
   const { logout } = useAuth0();
 
+  const returnUrl = process.env.REACT_APP_REDIRECT_LOGOUT;
   const handleLogOut = () => {
     localStorage.removeItem("userRentEasy")
     localStorage.removeItem("agentProfilePic")
     localStorage.removeItem("AgentId_Entered")
-    logout({ logoutParams: { returnTo: "http://localhost:3000/" } })
+    logout({ logoutParams: { returnTo: returnUrl } })
   } 
 
   return (
