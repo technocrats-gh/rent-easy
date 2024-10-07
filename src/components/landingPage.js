@@ -30,10 +30,11 @@ const LandingPage = (props) => {
                     </div>
                     <ul className="links">
                         <li onClick={() => navigate("/HomePage")}>Home</li>
-                        <li >Invest with Us</li>
-                        <li onClick={() => setViewLandingContact(true)}>Contact Us</li>
-                        <StartLogin />
+                        <li onClick={() => navigate("/HomePage")} >Contact Us</li>
+                        <li  >Invest  </li>
+                        <li className='login-button'><StartLogin /></li>
                     </ul>
+
                 </div>
             </header>
             <div className="content">
