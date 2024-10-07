@@ -32,9 +32,7 @@ const LandingPage = (props) => {
                         <li onClick={() => navigate("/HomePage")}>Home</li>
                         <li onClick={() => navigate("/HomePage")} >Contact Us</li>
                         <li  >Invest  </li>
-                        <div className='login-button'>
-                            <StartLogin />
-                        </div>
+                        <li className='login-button'><StartLogin /></li>
                     </ul>
 
                 </div>
