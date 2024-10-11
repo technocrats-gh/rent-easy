@@ -55,29 +55,14 @@ ul {
 }
 
 /* Small */
-@media (min-width: 768px)  {
+@media (min-width: 768px) {
   .container {
-    width: 2560px;
-    gap: 140px;
-  }
-  .info{
-    font-size:4rem;
-  }
-  .second-title{
-    font-size: 1.5rem;
-  }
-  .img-icons {
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-bottom: 25px;
-  }
-  .footer{
-    height: auto;
-    display: flex;
-    justify-content: space-around;
+    width: 990px;
   }
 }
-@media (min-width: 896px)  {
+
+
+@media (min-width: 896px) {
   .container {
     width: 690px;
   }
@@ -94,28 +79,7 @@ ul {
 /* Large */
 @media (min-width: 1200px) {
   .container {
-    width: 970px;
-    gap: 20px;
-  }
-  .footer-items{
-    max-width: 18rem;
-  }
-}
-
-/* Small */
-@media (max-width: 768px) {
-  .container {
-    width: 750px;
-    gap: 0px;
-  }
-}
-
-@media (max-width: 746px) {
-  .footer{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 1800px;
   }
 }
 
@@ -127,52 +91,85 @@ ul {
   display: flex;
 }
 
+
+/* Adjustments for Mobile Screens (max-width: 767px) */
 @media (max-width: 767px) {
-  .landing-page header {
-    min-height: auto;
-    display: initial;
+  .landing-page .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+    row-gap: 0.6rem;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .landing-page header .logo {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .landing-page header .links {
+    display: flex;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .content .container .image img {
+    padding-top: 19rem;
   }
 }
 
-@media (min-width: 896px)  {
+/* Adjustments for Tablets (min-width: 768px and max-width: 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .landing-page .header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .landing-page header .logo {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .landing-page header .links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .landing-page .content .container .info {
+    padding-top: 25rem;
+  }
+}
+
+
+
+/* Adjustments for Small Laptops (min-width: 992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
   .landing-page header {
-    display: flex
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  .landing-page header .links li {
+    margin-left: 3rem;
   }
 }
 
 .landing-page header .container {
   margin-top: 1rem;
   display: flex;
-}
-
-@media (min-width: 896px)  {
-  .landing-page header .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-  }
-}
-
-@media (max-width: 767px) {
-  .landing-page header .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 6rem;
-    row-gap: 0.6rem;
-  }
-
-}
-
-@media (min-width: 896px)  {
-  .landing-page header .logo {
-    color: #5d5d5d;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 10px;
-    margin-left: 1rem;
-  }
+  align-items: center;
+  justify-content: space-between;
 }
 
 .landing-page header .logo {
@@ -183,41 +180,12 @@ ul {
   margin-left: 1rem;
 }
 
-@media (max-width: 767px) {
-  .landing-page header .logo {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
 
 .landing-page header .links {
   display: flex;
   align-items: center;
   margin-left: auto;
   font-family: 'Poppins';
-}
-
-@media (min-width: 896px)  {
- .landing-page .header .container .links  {
-    text-align: center;
-    font-size: 15px;
-  }
-}
-
-
-@media (max-width: 767px) {
-  .landing-page header .links {
-    text-align: center;
-    gap: 10px;
-    padding-right: 2.5rem;
-    font-size: 16px;
-    column-gap: 1.2rem;
-  }
-
-  .login-button {
-    display: none;
-  }
- 
 }
 
 
@@ -228,11 +196,7 @@ ul {
   transition: .3s;
 }
 
-@media (max-width: 767px) {
-  .landing-page header .links li {
-    margin-left: auto;
-  }
-}
+
 
 .btn {
   border: none;
@@ -321,9 +285,10 @@ ul {
   .landing-page .content .container {
     display: flex;
     gap: 0;
-    min-height: 100vh;
-    flex-wrap: wrap;
-    justify-content: space-around
+    min-height: calc(100vh - 101px);
+    justify-content: center;
+    flex-direction: column-reverse;
+    padding-top: 13rem;
   }
 }
 
