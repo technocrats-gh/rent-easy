@@ -21,7 +21,7 @@ const LandingPage = (props) => {
         <div className="landing-page">
             <header>
                 <div className="container">
-                    <div style={{ display: 'flex' }}>
+                    <div  style={{ display: 'flex' }}>
                         <img src={logo} alt="Rent Easy Logo" className="logo-img" />
                         <div style={{ display: 'flex', flexDirection: "column", alignItems: "flex-start" }}>
                             <span className='logo-txt'> Rent Easy</span>
