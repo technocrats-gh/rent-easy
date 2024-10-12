@@ -3,28 +3,23 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #78997b, transparent);
 }
 
-.your-class {
-  font-family: 'Poppins', sans-serif;
+.landing-page{
+  overflow: hidden;
+  padding-inline: 1.5rem;
 }
 
-body{
-  // background: rgb(34,193,195);
-  background: linear-gradient(180deg, #78997b, transparent);  
-  height: 100%;
-  // background: linear-gradient(135deg, rgba(34,193,195,1) 50%,     rgba(253,187,45,1) 100%);
-  // font-family: "CostarBrownLight, sans-serif, sans-serif";
-}
-.logo-txt{
-  // @include fontStyle("Poppins", 14px, #666678);
+.logo-txt {
   font-family: 'Poppins';
-  font-weight: bolder;    
+  font-weight: bolder;
   font-size: 23px;
   color: #FFF;
   margin: 7px 0 -4px 0;
 }
-.logo-txt-2{
+
+.logo-txt-2 {
   font-family: 'Poppins';
   color: #FFF;
   letter-spacing: 4px;
@@ -43,8 +38,6 @@ ul {
   margin: 0;
 }
 .container {
-  // padding-left: 15px;
-  // padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -165,9 +158,8 @@ ul {
 .landing-page header .container {
   margin-top: 1rem;
   display: flex;
-  // align-items: center;
-  // justify-content: space-between;
 }
+
 @media (max-width: 767px) {
   .landing-page header .container {
     flex-direction: column;
@@ -225,7 +217,6 @@ ul {
 .second-title{
   color: #7d7d7d;
   font-family: poppins;
-  //font-size: 1.5rem;
   display: block;
 }
 .info{
@@ -246,7 +237,6 @@ ul {
   color: #7d7d7d;
   font-size: 20px;
   font-weight: bold;
-  // width: 7rem;
 }
 .item{
   width: 27rem;
@@ -254,18 +244,8 @@ ul {
   display: flex;
   flex-direction: column;
   max-width: fit-content;
-  // margin-bottom: 25px;
 }
-// .item:first-child{
-//   // margin-left: 0.25rem;
-// }
 
-/*.img-icons{
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-bottom: 25px;
-}
-  */
 .style-btn {
   border-radius: 7rem;
   padding: 7px 14px;
@@ -282,11 +262,10 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //gap: 140px;
-  // min-height: calc(100vh - 80px);
   height: 71vh;
   max-width: fit-content;
 }
+
 @media (max-width: 767px) {
   .landing-page .content .container {
     display: flex;
@@ -332,7 +311,6 @@ ul {
   display: inline-block;
   margin-bottom: 5rem;
   padding: 15px; /* Adjust the padding as desired */
-  // background: linear-gradient(to top, transparent, rgba(108, 99, 255))
 }
 .logo {
   display: flex; /* Use flexbox for alignment */
@@ -341,12 +319,7 @@ ul {
   color: inherit; /* Use inherited color */
 }
 .logo-img {
-  /* Your styles for the logo image */
-  // width: 50px; /* Adjust as needed */
-  // height: 50px; /* Adjust as needed */
-  // margin-right: 1px;
-  // border-radius: 30%;
-  width: 55px;
+    width: 55px;
     height: 55px;
     margin: 4px 0 0 0;
 }
