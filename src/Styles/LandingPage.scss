@@ -11,16 +11,7 @@ body {
   padding-inline: 1.5rem;
 }
 
-body {
-  // background: rgb(34,193,195);
-  background: linear-gradient(180deg, #78997b, transparent);
-  height: 100%;
-  // background: linear-gradient(135deg, rgba(34,193,195,1) 50%,     rgba(253,187,45,1) 100%);
-  // font-family: "CostarBrownLight, sans-serif, sans-serif";
-}
-
 .logo-txt {
-  // @include fontStyle("Poppins", 14px, #666678);
   font-family: 'Poppins';
   font-weight: bolder;
   font-size: 23px;
@@ -82,8 +73,6 @@ ul {
     width: 1800px;
   }
 }
-
-/* End Global Rules */
 
 /* Start Landing Page */
 .landing-page header {
@@ -188,15 +177,12 @@ ul {
   font-family: 'Poppins';
 }
 
-
 .landing-page header .links li {
   margin-left: 30px;
   color: #FFF;
   cursor: pointer;
   transition: .3s;
 }
-
-
 
 .btn {
   border: none;
@@ -246,7 +232,6 @@ ul {
   font-family: 'Poppins';
   display: flex;
   flex-direction: column;
-  // margin-bottom: 25px;
 }
 
 .item:first-child {
@@ -330,27 +315,17 @@ ul {
   display: inline-block;
   margin-bottom: 5rem;
   padding: 15px;
-  /* Adjust the padding as desired */
-  // background: linear-gradient(to top, transparent, rgba(108, 99, 255))
 }
 
 .logo {
   display: flex;
-  /* Use flexbox for alignment */
   align-items: center;
-  /* Center the image and text vertically */
   text-decoration: none;
-  /* Remove default text decoration (underline) */
   color: inherit;
-  /* Use inherited color */
+
 }
 
 .logo-img {
-  /* Your styles for the logo image */
-  // width: 50px; /* Adjust as needed */
-  // height: 50px; /* Adjust as needed */
-  // margin-right: 1px;
-  // border-radius: 30%;
   width: 55px;
   height: 55px;
   margin: 4px 0 0 0;
