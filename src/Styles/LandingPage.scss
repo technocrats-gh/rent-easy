@@ -45,114 +45,12 @@ ul {
   margin-right: auto;
 }
 
-/* Small */
-@media (min-width: 768px) {
-  .container {
-    width: 990px;
-  }
-}
-
-
-@media (min-width: 896px) {
-  .container {
-    width: 690px;
-  }
-}
-
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1800px;
-  }
-}
-
-
 /* Start Landing Page */
 .landing-page header {
   min-height: 80px;
   display: flex;
 }
 
-
-/* Adjustments for Mobile Screens (max-width: 767px) */
-@media (max-width: 767px) {
-  .landing-page .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-right: 2rem;
-    row-gap: 0.6rem;
-  }
-
-  .login-button {
-    display: none;
-  }
-
-  .landing-page header .logo {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-
-  .landing-page header .links {
-    display: flex;
-    gap: 2px;
-    text-align: center;
-  }
-
-  .content .container .image img {
-    padding-top: 19rem;
-  }
-}
-
-/* Adjustments for Tablets (min-width: 768px and max-width: 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .landing-page .header .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 900px;
-    margin: 0 auto;
-  }
-
-  .landing-page header .logo {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  .landing-page header .links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-
-  .landing-page .content .container .info {
-    padding-top: 25rem;
-  }
-}
-
-
-
-/* Adjustments for Small Laptops (min-width: 992px to 1200px) */
-@media (min-width: 992px) and (max-width: 1200px) {
-  .landing-page header {
-    padding: 1rem;
-    justify-content: space-between;
-  }
-
-  .landing-page header .links li {
-    margin-left: 3rem;
-  }
-}
 
 .landing-page header .container {
   margin-top: 1rem;
@@ -268,25 +166,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 140px;
-  // min-height: calc(100vh - 80px);
   height: 71vh;
-}
-
-@media (max-width: 767px) {
-  .landing-page .content .container {
-    gap: 0;
-    min-height: calc(100vh - 101px);
-    justify-content: center;
-    flex-direction: column-reverse;
-    padding-top: 13rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .landing-page .content .info {
-    text-align: center;
-    margin-bottom: 15px
-  }
 }
 
 .landing-page .content .info h1 {
@@ -362,5 +242,61 @@ ul {
   font-size: 10px;
   margin: 2rem 0 0 3.7rem;
 }
+
+/* Mobile screens*/
+@media (max-width: 425px) {
+  .container {
+    background-color: rgba(0, 0, 255, 0.1);
+  }
+  .landing-page .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+    row-gap: 0.6rem;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .landing-page header .logo {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .landing-page header .links {
+    display: flex;
+    gap: 2px;
+    text-align: center;
+  }
+
+}
+
+/* Tablet screens */
+@media (min-width: 768px) {
+  .container {
+    background-color: rgba(255, 192, 203, 0.15);
+    width: 690px;
+  }
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+  .container {
+    background-color: rgba(165, 42, 42, 0.15);
+    width: 970px;
+  }
+}
+
+/* Large laptops */
+@media (min-width: 1440px) {
+  .container {
+    background-color: rgba(0, 255, 255, 0.2);
+    width: 1800px;
+  }
+}
+
 
 /* End Landing Page */
