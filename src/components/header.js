@@ -23,7 +23,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const menuStart = () => {
-    return <div style={{ display: 'flex', cursor: 'pointer', marginTop: '2.1rem' }}>
+    return <div style={{ display: 'flex', cursor: 'pointer', marginTop: '2.1rem' }} onClick={() => navigate("/")}>
       <img src={logo} alt='Renteasy_logo' className="img-logo" />
     </div>
   }

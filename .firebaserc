@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "rent-easy-e25bb"
-  }
+    "default": "rent-easy-e25bb",
+    "staging": "rent-easy-e25bb"
+  },
+  "targets": {},
+  "etags": {}
 }

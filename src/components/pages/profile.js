@@ -3,6 +3,7 @@ import { Card } from 'primereact/card'
 import { Toast } from 'primereact/toast';
 import '../../Styles/HomePage.scss'
 import '../../Styles/settings.scss'
+import '../../Styles/responsiveness.scss'
 import { Loading } from '../../utils/loading'
 import { UserId } from '../../utils/userData';
 import { fetchAgentData, updateAgentData, uploadAgentProfilePic } from '../../firebase'
@@ -207,10 +208,10 @@ export const SettingsProfile = () => {
                 >Cancel</Button>}
 
                 <Button
-                  className='saveEditBtn'
+                  className={state.btnClicked ? 'default' : 'saveEditBtn'}
                   onClick={handleSave}
                   // onClick={formik.handleSubmit}
-                  style={{ marginLeft: state.btnClicked ? "0rem" : "41.5rem" }}
+                  // style={{ marginLeft: state.btnClicked ? "0rem" : "41.5rem" }}
                   type={state.btnClicked ? "submit" : "button"}
                 >
                   {state.btnClicked ? "Save" : "Edit"}

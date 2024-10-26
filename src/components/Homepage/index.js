@@ -3,11 +3,20 @@ import SearchBar from './searchBar';
 import CardTemp from './card';
 import { Dropdown } from 'primereact/dropdown';
 import { Card } from 'primereact/card';
+import { Paginator } from 'primereact/paginator';
 import 'primereact/resources/themes/saga-blue/theme.css';
+import '../../Styles/responsiveness.scss'
 import '../../Styles/HomePage.scss'
 
 function HomePage() {
   const [selectedCity, setSelectedCity] = useState(null);
+  const [first, setFirst] = useState(0);
+  const [rows, setRows] = useState(10);
+
+  const onPageChange = (event) => {
+    setFirst(event.first);
+    setRows(event.rows);
+  };
 
   const cities = [
     { name: 'North East', code: 'NST' },
@@ -50,6 +59,7 @@ function HomePage() {
           <CardTemp />
         </div>
       </Card>
+      <Paginator first={first} rows={rows} totalRecords={120} onPageChange={onPageChange} />
     </div>
 
   );

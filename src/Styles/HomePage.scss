@@ -101,14 +101,14 @@
   font-family: "Poppins";
   font-size: 0.8rem;
 }
+.profile-card{
+  margin: 1rem 35rem 0 35rem ;
+  width: 51rem;
+  background-color: #d8ead5;
+}
 .profile-card-main{
   margin : 9rem 0rem 7rem 0rem;
   height: 48.5rem;
-}
-.profile-card{
-  margin: 1rem 35rem 0 35rem;
-  width: 51rem;
-  background-color: #d8ead5;
 }
 .pro-heading{
   margin: 5rem 0 1rem 35rem;
@@ -162,27 +162,12 @@
   transform: translateY(-5px); /* Lift on hover */
 }
 
-// .aspect-video {
-//   position: relative;
-//   padding-top: 56.25%; /* 16:9 aspect ratio */
-//   overflow: hidden;
-// }
 .dialog-header{
   background-color: #b2ddb4;
   height: 4rem;
   color: #fff;
   margin-top: 0.8rem;
 }
-
-// .aspect-video img{
-//   position: absolute;
-//   cursor: pointer;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover; /* Maintain aspect ratio while covering */
-// }
 
 .book-inputs, .edit-book-inputs{
   margin-bottom: 15px;
@@ -291,41 +276,18 @@
   box-shadow: 0 0 0 0.04rem;
   margin-left: 7rem;
 }
-// .push-img-logo{
-//   width: 2rem;
-//   height: 2rem;
-//   background-color: #C1C1C9;
-//   border-radius: 50%;
-//   margin-left: 18rem;
-//   transition: margin-left 500ms ease-in-out;
-//   margin-top: 0.8rem;
-// }
+
 .profile{
   margin-left: 1px;
   transition: margin-left 500ms ease-out-in;
   display: flex;
 }
 
-// .services{
-//   height: fit-content;
-//   margin-top: 2rem;
-//   margin-left: 11rem;
-//   margin-bottom: 1rem;
-// }
-
 .logo-footer{
   width: 3rem;
   height: 2.5rem;
   margin-left: 2rem;
 }
-
-// .logo-footer-push{
-//   border-radius: 50% ;
-//   width: 2rem;
-//   height: 2rem;
-//   margin-left: 19rem;
-//    transition: margin-left 500ms ease-in-out;
-// }
 
 // /* Description */
 .line-clamp-3 {
@@ -375,58 +337,6 @@
 .card-img{
   width: 20rem;
   height: 13.5rem;
-}
-
-/* Mobile screens*/
-@media (max-width: 425px) {
-  .links {
-    column-gap: 1.6rem;
- }
- .p-menubar .p-menubar-button{
-  visibility: hidden;
- }
- .searchInput{
-  width: 10rem;
- }
- .display-card {
-  margin: 2rem 0 0 1.6rem;
-}
-.dropbox-div{
-  margin-left: -0.8rem;
-}
-.all-rights {
-  visibility: hidden;
-}
-.footer-socials{
-  margin-left: 14rem !important;
-}
-
-}
-
-/* Tablet screens */
-@media (min-width: 768px) {
-  .display-card {
-    margin: 2rem 0 0 1rem;
-  }
-  .card-grid-container {
-    row-gap: 2rem;
-    column-gap: 2rem;
-    padding: 1rem;
-}
-}
-
-/* Small laptops */
-@media (min-width: 1024px) {
-  .card-grid-container {
-    row-gap: 2rem;
-    column-gap: 3rem;
-    padding-inline: 9rem;
-}
-}
-
-/* Large laptops */
-@media (min-width: 1440px) {
- 
 }
 
 

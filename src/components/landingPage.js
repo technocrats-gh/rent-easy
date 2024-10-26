@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/LandingPage.scss'
+import '../Styles/responsiveness.scss'
 import StartLogin from './StartLogin';
 import apartImg from '../images/apart img.png'
 import logo from '../images/easyR.png'
@@ -10,10 +11,8 @@ import { CustomDialog } from '../utils/dialog';
 import { useNavigate, Link } from 'react-router-dom';
 
 const LandingPage = (props) => {
-    // const [agentVisible, setAgentVisible] = useState(false);
     const [viewLandingContact, setViewLandingContact] = useState(false);
 
-    // const onHide = () => setAgentVisible(false);
     const hideContactDia = () => setViewLandingContact(false);
 
     const navigate = useNavigate()
@@ -21,7 +20,7 @@ const LandingPage = (props) => {
         <div className="landing-page">
             <header>
                 <div className="container">
-                    <div  style={{ display: 'flex' }}>
+                    <div className='flex' onClick={() => navigate("/")}>
                         <img src={logo} alt="Rent Easy Logo" className="logo-img" />
                         <div style={{ display: 'flex', flexDirection: "column", alignItems: "flex-start" }}>
                             <span className='logo-txt'> Rent Easy</span>
@@ -30,7 +29,7 @@ const LandingPage = (props) => {
                     </div>
                     <ul className="links">
                         <li onClick={() => navigate("/HomePage")}>Home</li>
-                        <li onClick={() => navigate("/HomePage")} >Contact Us</li>
+                        <li onClick={() => setViewLandingContact(true)} >Contact Us</li>
                         <li  >Invest  </li>
                         <li className='login-button'><StartLogin /></li>
                     </ul>
