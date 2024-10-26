@@ -73,7 +73,7 @@ const ListingCard = (props) => {
   return <div>
     <span className='card-grid-container '>
       {shownCards}
-    </span>;
+    </span>
     <Dialog visible={visible} header={label ? "Edit Listing" : "Book An Appointment"} onHide={onHide}
     >
       <div style={{ display: 'flex', flexDirection: "column" }}>
