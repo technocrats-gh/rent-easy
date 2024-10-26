@@ -13,10 +13,10 @@ function SearchBar({ onSearch, listingPage, listSearch }) {
   };
 
   return (
-    <form onSubmit={handleSearch} className="search-bar">
+    <form onSubmit={handleSearch}>
       <InputText
         type="text"
-        placeholder="search Agent Name, Appartment description etc..."
+        placeholder="search here ..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className={listingPage ? "search-listings" : 'searchInput'}

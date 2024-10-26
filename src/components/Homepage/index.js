@@ -8,7 +8,7 @@ import '../../Styles/HomePage.scss'
 
 function HomePage() {
   const [selectedCity, setSelectedCity] = useState(null);
-  // const [selectedAgent, setSelectedAgent] = useState(null);
+
   const cities = [
     { name: 'North East', code: 'NST' },
     { name: 'Western North', code: 'WNT' },
@@ -35,15 +35,16 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <div className='search-card'>
-        <div style={{ display: 'flex' }}>
+      <div className='search-card grid'>
+        <div className='dropbox-div mb-2'>
           <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" editable
             placeholder="Select a Region" />
-
+        </div>
+        <div>
           <SearchBar onSearch={handleSearch} />
         </div>
-
       </div>
+
       <Card className='home-card'>
         <div className='display-card'>
           <CardTemp />

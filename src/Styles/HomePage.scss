@@ -1,7 +1,3 @@
-// .main-content{
-//   height: 48rem;
-// }
-
 .p-menubar {
   border-radius: 0px;
   height: 3rem;
@@ -23,7 +19,6 @@
 }
 .login{
   border-radius: 7rem;
-  // padding: 7px 14px;
   color: #48924F;
   background-color: #fdfdfd;
   font-weight: bolder;
@@ -53,7 +48,6 @@
     font-weight: bold;
     color: #48924F;
     border-radius: 3rem;
-    // box-shadow: 0 0 0 0.1em;
 }
 .all-rights{
   font-family: 'Poppins';
@@ -62,7 +56,6 @@
 }
 
 .home-page{
-  // transition: margin-left 500ms ease-in-out;
   overflow: hidden;
 }
 
@@ -77,16 +70,11 @@
 .search-card{
   height: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 5rem;
-  margin-bottom: 2rem;
-  // margin-left: 6rem;
-  background-color: #C1C1C9;
-  width: 116.5rem;
-  margin-left: 1.3rem;
-  background-color: #dfdfdf;
+  padding-inline: 1rem;
+  background-color: #d8ead5;
   border-radius: 5px;
 }
 .p-dropdown {
@@ -107,23 +95,19 @@
   visibility: visible;
 }
 .searchInput {
-    height: 2.5rem;
-    width: 27rem;
-    border: none;
-    font-family: "Poppins";
-    font-size: 0.8rem;
-    margin-right: 0.2rem;
-    margin-left: 13rem;
+  height: 2.5rem;
+  width: 24rem;
+  border: none;
+  font-family: "Poppins";
+  font-size: 0.8rem;
 }
 .profile-card-main{
   margin : 9rem 0rem 7rem 0rem;
   height: 48.5rem;
 }
 .profile-card{
-  // height: 52rem;
   margin: 1rem 35rem 0 35rem;
   width: 51rem;
-  // margin-inline: 35rem;
   background-color: #d8ead5;
 }
 .pro-heading{
@@ -131,19 +115,7 @@
   font-family: 'Poppins';
   color: #fff;
 }
-// .search-button{
-//   height: 3rem;
-//   width: 5rem;
-//   border-radius: 0.5rem;
-//   background-color: #427b01;
-//   border-color: #427b01;
-//   color: #fff;
-//   border:none;
-// }
-.search-bar{
-  display: flex;
-  margin: 0.8rem 0 0 45rem;
-}
+
 .greetings{
   font-family: "CostarBrownLight";
   font-size: 1.5rem;
@@ -176,21 +148,25 @@
 .card {
     border-radius: 8px;
     overflow: hidden;
+    padding-inline: 0.5rem;
     width: 350px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(12, 12, 12, 0.1);
     transition: transform 0.4s;
+}
+.p-card .p-card-content, .p-card-body{
+  padding: 0 !important;
 }
 
 .card:hover {
   transform: translateY(-5px); /* Lift on hover */
 }
 
-.aspect-video {
-  position: relative;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
-  overflow: hidden;
-}
+// .aspect-video {
+//   position: relative;
+//   padding-top: 56.25%; /* 16:9 aspect ratio */
+//   overflow: hidden;
+// }
 .dialog-header{
   background-color: #b2ddb4;
   height: 4rem;
@@ -198,16 +174,16 @@
   margin-top: 0.8rem;
 }
 
-.aspect-video img{
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Maintain aspect ratio while covering */
-  // border: solid 0.5px black ;
-}
+// .aspect-video img{
+//   position: absolute;
+//   cursor: pointer;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover; /* Maintain aspect ratio while covering */
+// }
+
 .book-inputs, .edit-book-inputs{
   margin-bottom: 15px;
 }
@@ -258,12 +234,13 @@
   border: none;
 }
 .home-card{
-  height: 65rem;
-  margin-inline: 6rem;
   background-color: #d8ead5;
+  height: auto;
 }
+
 .display-card{
-  margin: 2rem 0 0 4rem;
+  margin: 2rem 0 0 2rem;
+  padding: 1rem 0 0 0;
 }
 .edit-upload-divs{
   width: 19rem;
@@ -314,50 +291,46 @@
   box-shadow: 0 0 0 0.04rem;
   margin-left: 7rem;
 }
-.push-img-logo{
-  width: 2rem;
-  height: 2rem;
-  background-color: #C1C1C9;
-  border-radius: 50%;
-  margin-left: 18rem;
-  transition: margin-left 500ms ease-in-out;
-  margin-top: 0.8rem;
-}
+// .push-img-logo{
+//   width: 2rem;
+//   height: 2rem;
+//   background-color: #C1C1C9;
+//   border-radius: 50%;
+//   margin-left: 18rem;
+//   transition: margin-left 500ms ease-in-out;
+//   margin-top: 0.8rem;
+// }
 .profile{
   margin-left: 1px;
   transition: margin-left 500ms ease-out-in;
   display: flex;
 }
 
-
-.services{
-  height: fit-content;
-  margin-top: 2rem;
-  margin-left: 11rem;
-  margin-bottom: 1rem;
-}
-
+// .services{
+//   height: fit-content;
+//   margin-top: 2rem;
+//   margin-left: 11rem;
+//   margin-bottom: 1rem;
+// }
 
 .logo-footer{
   width: 3rem;
   height: 2.5rem;
   margin-left: 2rem;
 }
-.logo-footer-push{
-  border-radius: 50% ;
-  width: 2rem;
-  height: 2rem;
-  margin-left: 19rem;
-   transition: margin-left 500ms ease-in-out;
-}
+
+// .logo-footer-push{
+//   border-radius: 50% ;
+//   width: 2rem;
+//   height: 2rem;
+//   margin-left: 19rem;
+//    transition: margin-left 500ms ease-in-out;
+// }
 
 // /* Description */
 .line-clamp-3 {
   font-size: 0.9rem;
   color: #6b7280;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   overflow: hidden;
   margin-bottom: 2px;
 }
@@ -370,106 +343,6 @@
   margin-top: 1.5px;
 }
 
-/* Responsive styling */
-@media (max-width: 425px){
-  //Homepage
-  .header {
-    background-color: #C1C1C9;
-    height: 3.5rem;
-    margin: 5rem 1rem 2rem 3rem;
-  }
-  .search{
-    width: 20rem
-  }
-  .greetings{
-    font-size: large;
-  }
-  .card-grid-container{
-    margin-left: 1rem;
-    gap: 15px;
-  }
-  .card{
-    width: 160px;
-    height: 160px;
-  }
-  .card-title {
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin-top: -1.3rem;
- }
-.p-card .p-card-body {
-  padding: 0.2rem;
-}
-.side-text, .profile-text, .profile-name, .profile-email, .card-subtitle{
-  visibility: hidden;
-}
-.push-main {
-  margin-left: 1.7rem;
-}
-.push-img-logo{
- margin-left:2rem;
-}
-.logo-footer-push{
-  margin-left: 2.6rem;
-}
-.img-shadow{
-  margin: 0.4rem -10rem 0rem 0rem;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-
-}
-
-}
-
-@media (min-width:426px) and (max-width: 768px){
-.push-main {
-  margin-left: 9rem;
-}
-.header {
-  height: 3.5rem;
-  margin: 5rem 1rem 2rem 1.5rem;
-}
-// .search{
-//   width: 36rem
-// }
-.greetings{
-  font-size: large;
-}
-.card-grid-container{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 1rem;
-  margin-right: 0rem;
-  gap: 15px;
-}
-// .card{
-//   width: 270px;
-//   height: 270px;
-// }
-
-.card-title {
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin-top: -1.3rem;
-}
-.card-subtitle{
-  font-size: 0.8rem;
-}
-.card-body{
-  margin-left: 0.3rem;
-  margin-top: 1.6rem;
-}
-.p-card .p-card-body {
-padding: 0.2rem;
-}
-.push-img-logo{
-  margin-left:8.3rem;
- }
- .logo-footer-push{
-   margin-left: 10rem;
- }
-}
 .profile-btn{
   font-family: 'Poppins';
     margin: 0 0 0.5rem 1rem;
@@ -480,26 +353,7 @@ padding: 0.2rem;
   font-weight: bold;
   transition: 400ms;
 }
-// @media (max-width: 1024px) {
-//   .card-grid-container {
-//     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-//   }
-// }
 
-// @media (max-width: 640px) {
-//   .card-grid-container {
-//     grid-template-columns: 1fr; /* 1 column on very small screens */
-//   }
-// }
-// @media (max-width: 1900px) {
-//   .card-grid-container {
-//     grid-template-columns: repeat(5, 1fr) /* 1 column on very small screens */
-//   }
-// }
-// .p-icon {
-//   display: inline-block;
-//   visibility: hidden;
-// }
 .p-dropdown .p-dropdown-label.p-placeholder {
   color: #777777;
   margin-top: 2px;
@@ -517,3 +371,63 @@ padding: 0.2rem;
   box-shadow: none;
   border-color: navajowhite;
 }
+
+.card-img{
+  width: 20rem;
+  height: 13.5rem;
+}
+
+/* Mobile screens*/
+@media (max-width: 425px) {
+  .links {
+    column-gap: 1.6rem;
+ }
+ .p-menubar .p-menubar-button{
+  visibility: hidden;
+ }
+ .searchInput{
+  width: 10rem;
+ }
+ .display-card {
+  margin: 2rem 0 0 1.6rem;
+}
+.dropbox-div{
+  margin-left: -0.8rem;
+}
+.all-rights {
+  visibility: hidden;
+}
+.footer-socials{
+  margin-left: 14rem !important;
+}
+
+}
+
+/* Tablet screens */
+@media (min-width: 768px) {
+  .display-card {
+    margin: 2rem 0 0 1rem;
+  }
+  .card-grid-container {
+    row-gap: 2rem;
+    column-gap: 2rem;
+    padding: 1rem;
+}
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+  .card-grid-container {
+    row-gap: 2rem;
+    column-gap: 3rem;
+    padding-inline: 9rem;
+}
+}
+
+/* Large laptops */
+@media (min-width: 1440px) {
+ 
+}
+
+
+/* End Home Page */
