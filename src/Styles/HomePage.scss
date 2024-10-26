@@ -380,7 +380,7 @@
 /* Mobile screens*/
 @media (max-width: 425px) {
   .links {
-    column-gap: 1.6rem;
+    column-gap: 1rem;
  }
  .p-menubar .p-menubar-button{
   visibility: hidden;
@@ -399,6 +399,9 @@
 }
 .footer-socials{
   margin-left: 14rem !important;
+}
+.style-btn {
+  font-size: 13px;
 }
 
 }
