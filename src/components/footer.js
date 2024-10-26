@@ -15,7 +15,7 @@ export const Footer = ({ isMenuOpen }) => {
     <div>
       <div className='footer-div'>
         <img src={logo} className='logo-footer' />
-        <span style={{ display: 'flex', gap: '0.8rem', marginLeft: '2rem' }}>
+        <span className='footer-socials' style={{ display: 'flex', gap: '0.8rem', marginLeft: '2rem' }}>
           <img src={facebook} />
           <img src={instagram} />
           <img src={twitter} />

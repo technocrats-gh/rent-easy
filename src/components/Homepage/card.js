@@ -44,15 +44,15 @@ const ListingCard = (props) => {
 
   const shownCards = listings.map((item) => (
     <div key={item.id} className='card-div'>
-      <Card className="card overflow-hidden">
-        <div className='aspect-video'>
-          <img alt="Cover image" src={item.image} />
+      <Card className="card overflow-hidden grid">
+        <div className='col-12 '>
+          <img alt="Cover image" src={item.image} className='card-img' />
         </div>
-        <div className="card-body">
+        <div className="card-body col-12">
           <span className="card-title">{item.title}</span>
           <span className="line-clamp-3">{item.location}</span>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end", rowGap: '5px' }}>
+        <div className='col-12 flex flex-column' style={{ alignItems: "end" }}>
           <span className="card-subtitle">{`GHS ${item.price.toFixed(2)}/M`}</span>
           <Button className='bookbtn' label={label ? label : 'Book Now'} onClick={() => setVisible(true)} />
         </div>
@@ -66,12 +66,10 @@ const ListingCard = (props) => {
   function uploadContainers() {
     return <div>
       <div className='edit-upload-divs'>
-        {/* <p className='upload-title'>{title}</p> */}
       </div>
       <FileUpload mode='basic' className='edit-upload-btn' chooseLabel='upload' />
     </div>
   }
-  // return <div >{shownCards}</div>;
   return <div>
     <span className='card-grid-container '>
       {shownCards}
