@@ -59,9 +59,9 @@ const LandingPage = (props) => {
                 <div className="footer-items">
                     <span className='titles'>Contact</span>
                     <span className='item'>
-                        <span style={{ display: 'flex' }}><img src={emailIcon} className='img-icons' /> <>renteasy@gmail.com</> </span>
-                        <span style={{ display: 'flex' }}><img src={callIcon} className='img-icons' /><>(050)2201391</></span>
-                        <span style={{ display: 'flex' }}><img src={locationIcon} className='img-icons' /><>Sunyani</></span>
+                        <span style={{ display: 'flex' }} className='contact'><img src={emailIcon} className='img-icons' /> <>renteasy@gmail.com</> </span>
+                        <span style={{ display: 'flex' }} className='contact'><img src={callIcon} className='img-icons' /><>(050)2201391</></span>
+                        <span style={{ display: 'flex' }} className='contact'><img src={locationIcon} className='img-icons' /><>Sunyani</></span>
                     </span>
                 </div>
                 <div className="footer-items">

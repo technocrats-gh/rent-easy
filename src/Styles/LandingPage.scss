@@ -6,7 +6,7 @@ body {
   background: linear-gradient(180deg, #78997b, transparent);
 }
 
-.landing-page{
+.landing-page {
   overflow: hidden;
   padding-inline: 1.5rem;
 }
@@ -249,6 +249,7 @@ ul {
   .container {
     background-color: rgba(0, 0, 255, 0.1);
   }
+
   .landing-page .container {
     display: flex;
     flex-direction: column;
@@ -262,6 +263,11 @@ ul {
     display: none;
   }
 
+  .info {
+    display: none;
+  }
+
+
   .landing-page header .logo {
     font-size: 18px;
     margin: 10px 0;
@@ -271,6 +277,31 @@ ul {
     display: flex;
     gap: 2px;
     text-align: center;
+  }
+
+  .footer {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+    height: 95vh;
+  }
+
+  .titles {
+    text-align: center;
+    margin-left: 2rem;
+  }
+
+  .item {
+    width: 20rem;
+    margin-left: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .contact {
+   margin-left: 4rem;
   }
 
 }
@@ -288,7 +319,10 @@ ul {
   .container {
     background-color: rgba(165, 42, 42, 0.15);
     width: 970px;
+
   }
+
+  
 }
 
 /* Large laptops */
