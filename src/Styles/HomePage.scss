@@ -377,8 +377,37 @@
   height: 13.5rem;
 }
 
-/* Mobile screens*/
-@media (max-width: 425px) {
+//Min mobile screens
+@media (min-width: 325px) {
+  .searchInput {
+    height: 2.5rem;
+    width: 10rem;
+  }
+  .p-dropdown {
+    margin: 0.5rem 0 0 0rem;
+    width: 11rem;
+  }
+  .links {
+    column-gap: 0.45rem;
+    font-size: 14px;
+ }
+ .p-menubar .p-menubar-button{
+  visibility: hidden;
+ }
+ .all-rights {
+  visibility: hidden;
+}
+.display-card {
+  margin:2rem 0 0 0.15rem;
+}
+.footer-socials{
+  margin-left: 10rem !important;
+}
+}
+
+
+/* Max Mobile screens*/
+@media (min-width: 425px) {
   .links {
     column-gap: 1rem;
  }
