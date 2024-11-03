@@ -49,6 +49,34 @@
     color: #48924F;
     border-radius: 3rem;
 }
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.rating-side, .desc-side{
+  background-color: rgba(72, 146, 79, 0.08);
+}
+
+.hover-text {
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional: dark background for readability */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: none;
+  font-size: 14px;
+  opacity: 0; /* Start invisible */
+  transition: opacity 4s ease; /* Add transition */
+}
+
+.img-container:hover .hover-text {
+  opacity: 1;
+  display: block;
+}
 .all-rights{
   font-family: 'Poppins';
   color: #fff;
@@ -335,9 +363,24 @@
 }
 
 .card-img{
+  position: relative;
   width: 20rem;
   height: 13.5rem;
 }
 
+.blurry-dialog{
+  width: 49rem;
+  height: 40rem;
+}
+  /* Apply blur to the entire body when dialog is open */
+.p-dialog-mask {
+  backdrop-filter: blur(3px); /* Adjust the blur amount */
+  background-color: rgba(255, 255, 255, 0.2); /* Glassy overlay */
+}
+
+/* Optional: Make dialog content slightly transparent */
+.blurry-dialog .p-dialog-content {
+  backdrop-filter: blur(4px); /* Slight blur inside dialog */
+}
 
 /* End Home Page */

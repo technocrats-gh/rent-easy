@@ -5,16 +5,19 @@ import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 import { fetchAgentData } from '../firebase';
 import { Toast } from 'primereact/toast';
-
+import { Rating } from "primereact/rating";
+import { Carousel } from 'primereact/carousel';
 
 export const CustomDialog = (props) => {
-  const { agentVisible, setAgentVisible, onHide, hideAgentDia, viewAgent, setViewAgent, hideContactDia, viewContact, viewLandingContact, hideLandingContactDia } = props
+  const { agentVisible, setAgentVisible, onHide, hideAgentDia, viewAgent, setViewAgent, hideContactDia, viewContact, viewLandingContact, hideLandingContactDia, closeCardExpanded, expandCard, setExpandCard, listings, selectedCardId } = props
 
   const [id, setId] = useState("");
   const navigate = useNavigate();
   const toast = useRef(null);
+
   const [state, setState] = useState({
-    agentData: null
+    agentData: null,
+    value: null
   })
 
   useEffect(() => {
@@ -23,6 +26,7 @@ export const CustomDialog = (props) => {
     })
   }, [])
 
+  const currency = 'GHS';
 
   const showGoodToast = () => toast.current.show({
     severity: "success", summary: "success", detail: "Good 👍", life: "3000"
@@ -46,6 +50,13 @@ export const CustomDialog = (props) => {
     header: "Contact Us",
     headerClassName: "dialog-header",
   }
+
+  const showExpandedCard = [{
+    header: "View More About This Listing",
+    onHide: closeCardExpanded,
+    visible: expandCard,
+    data: listings
+  }]
 
   const moveToAgent = () => {
     if (state.agentData?.agentId === id) {
@@ -86,6 +97,7 @@ export const CustomDialog = (props) => {
         </div>
       </Dialog>
 
+
       <Dialog visible={contactData.visible} header={contactData.header} headerClassName={contactData.headerClassName} onHide={contactData.onHide}
       >
         <div style={{ display: 'flex', flexDirection: "column" }}>
@@ -100,6 +112,42 @@ export const CustomDialog = (props) => {
         </div>
         <Button label='Send' className='DibkBtn' />
       </Dialog>
+
+
+      {showExpandedCard.map(({ visible, onHide, header, data }, i) => <Dialog key={i} visible={visible} header={header} onHide={onHide} className="blurry-dialog">
+        <div className='grid'>
+          <div className='col-8 '>
+            <div className="flex justify-content-start">
+              {data?.filter(({ id }) => id === selectedCardId).map(({ image }) => <img src={image} alt='alt-img' className='card-img img-visible' />)}
+              {/* <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} /> */}
+            </div>
+          </div>
+          <div className='col-4 p-3 rating-side'>
+            <p>Give a Review</p>
+            <div className="flex justify-content-start mb-3">
+              <Rating value={state.value} onChange={(e) => setState((state) => ({ ...state, value: e.value }))} cancel={false} />
+            </div>
+            <label>Detail Review</label>
+            <InputText className='review-box' />
+            <Button label='Send Review' className='review-btn' />
+          </div>
+
+          <div className='col-12 desc-side'>
+            <p className='font-bold mt-1 mb-0'>Description</p>
+            <hr />
+            {data?.filter(({ id }) => id === selectedCardId).map(({ title, price, location }) => {
+              return (
+                <div>
+                  <p className='mb-0 mt-0'><span className='font-bold'>Room Type:</span> {title}</p>
+                  <p className='mb-0 mt-1'><span className='font-bold'>Amount/Month:</span> {currency}{" "}{price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 })}</p>
+                  <p className='mb-0 mt-1'><span className='font-bold'>City:</span> {location}</p>
+                </div>)
+            })}
+            <hr />
+          </div>
+
+        </div>
+      </Dialog>)}
 
     </div>
   )

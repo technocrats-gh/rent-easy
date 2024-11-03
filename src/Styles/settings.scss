@@ -81,17 +81,24 @@
 .default{
   margin-left: 0rem;
 }
-//Min mobile screens
-// @media (max-width: 375px) {
-//   .saveEditBtn {
-//     margin-left: 16.5rem;
-//   }
-// }
 
-// /* Max Mobile screens*/
-// @media (max-width: 425px) {
-//   .saveEditBtn {
-//     margin-left: 19.5rem;
-//   }
+.review-box{
+  height: 10rem;
+  border-radius: 5px;
+}
 
-// }
+.review-btn{
+  background-color: #fff;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #48924F;
+  border-radius: 3rem;
+  border-color: #48924F;
+  margin: 0.45rem 0 0 1.5rem;
+  width: 9rem;
+}
+
+.img-visible{
+  height: 20rem;
+  width: 29rem;
+}
