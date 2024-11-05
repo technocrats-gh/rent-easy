@@ -43,10 +43,14 @@
 /* Mobile screens*/
 @media (max-width: 425px) {
   /*LANDING PAGE */
-  .container {
+  .content .container {
     background-color: rgba(0, 0, 255, 0.1);
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    height: 55vh;
   }
-  .landing-page .container {
+  .landing-page header .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,17 +58,52 @@
     padding-right: 2rem;
     row-gap: 0.6rem;
   }
+  .landing-page .content .info {
+    text-align: center;
+    margin-bottom: 15px 
+    }
   .login-button {
-    display: none;
+   // display: none;
+  }
+  .style-btn {
+    border-radius: 1rem;
+    padding: 7px 14px;
+    font-size: 8px;
+    min-width: 46px;
   }
   .landing-page header .logo {
     font-size: 18px;
     margin: 10px 0;
   }
   .landing-page header .links {
+    font-size: 13px;
     display: flex;
     gap: 2px;
     text-align: center;
+    min-width: max-content;
+  }
+  .landing-page header {
+    min-height: auto;
+    display: initial;
+    }
+
+  .first-title {
+      font-size: 1.3rem;
+      display: none;
+  }
+  .second-title {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .image {
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 0rem;
+      padding: 15px;
+  }
+  .footer-items{
+    max-width: 18rem;
   }
 
   /*HOMEPAGE PAGE */
@@ -113,6 +152,23 @@
   .container {
     background-color: rgba(255, 192, 203, 0.15);
     width: 690px;
+    gap: 20px;
+  }
+  .content .container {
+    display: flex;
+    height: 71vh;
+  }
+
+  .footer {
+    height: auto;
+    margin-left: 4px;
+    }
+  
+  .first-title {
+      font-size: 2.3rem;
+  }
+  .second-title {
+    font-size: 1.2rem;
   }
 
   /*HOMEPAGE PAGE */
@@ -144,6 +200,37 @@
     background-color: rgba(165, 42, 42, 0.15);
     width: 970px;
   }
+  .info{
+    font-size:3rem;
+    }
+
+  .first-title {
+      font-size: 3.4rem;
+  }
+
+  .second-title{
+    font-size: 18px;
+    }
+
+  .item{
+    font-size: 12px;
+    width: 20rem;
+    }
+
+  .footer-items{
+    max-width: 22rem;
+    }
+
+  .img-icons{
+    margin-bottom: 16px;
+    }
+    
+  .footer{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      height: auto;
+    }
 
   /*HOMEPAGE PAGE */
   .card-grid-container {
@@ -168,7 +255,10 @@
    /*LANDING PAGE */
   .container {
     background-color: rgba(0, 255, 255, 0.2);
-    width: 1800px;
+    width: 1400px;
+  }
+  .first-title {
+    font-size: 4rem;
   }
 
    /*HOMEPAGE PAGE */
