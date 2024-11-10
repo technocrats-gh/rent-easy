@@ -120,7 +120,7 @@ export const CustomDialog = (props) => {
             <div className="flex justify-content-start">
               {data?.filter(({ id }) => id === selectedCardId).map(({ image }) => <img src={image} alt='alt-img' className='card-img img-visible' />)}
               {/* <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} /> */}
-            </div>
+            </div> 
           </div>
           <div className='col-4 p-3 rating-side'>
             <p>Give a Review</p>

@@ -55,7 +55,7 @@ const LandingPage = (props) => {
                         catalogue their listings making it easier to show future home owners
                     </span>
                 </div>
-                <div className="footer-items">
+                <div className="footer-items foot">
                     <span className='titles'>Contact</span>
                     <span className='item'>
                         <span style={{ display: 'flex' }}><img src={emailIcon} className='img-icons' /> <>renteasy@gmail.com</> </span>
@@ -63,7 +63,7 @@ const LandingPage = (props) => {
                         <span style={{ display: 'flex' }}><img src={locationIcon} className='img-icons' /><>Sunyani</></span>
                     </span>
                 </div>
-                <div className="footer-items">
+                <div className="footer-items foot">
                     <span className='titles'>How To Use</span>
                     <span className='item'>
                         <li>Navigate To Home and Browse through our collections of amazing apartments ready for you</li>
