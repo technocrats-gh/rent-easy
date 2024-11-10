@@ -165,8 +165,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 140px;
-  height: 71vh;
+  // gap: 140px;
+  // height: 71vh;
 }
 
 .landing-page .content .info h1 {
@@ -193,6 +193,7 @@ ul {
 
 .landing-page .content .image img {
   max-width: 100%;
+  margin: 0px 20px 0px 20px;
 }
 
 .image {
