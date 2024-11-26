@@ -9,6 +9,8 @@ body {
 .landing-page{
   overflow: hidden;
   padding-inline: 1.5rem;
+  height: 100vh;
+  // background-image: ;
 }
 
 .logo-txt {
@@ -59,7 +61,7 @@ ul {
   justify-content: space-between;
 }
 
-.landing-page header .logo {
+.logo {
   color: #5d5d5d;
   font-style: italic;
   text-transform: uppercase;
@@ -68,18 +70,21 @@ ul {
 }
 
 
-.landing-page header .links {
+ .links {
   display: flex;
-  align-items: center;
   margin-left: auto;
+  justify-content: end;
+  align-items: center;
   font-family: 'Poppins';
 }
 
-.landing-page header .links li {
-  margin-left: 30px;
+.links li {
   color: #FFF;
   cursor: pointer;
   transition: .3s;
+}
+.links li:hover{
+  color: #48924F;
 }
 
 .btn {
@@ -94,7 +99,7 @@ ul {
   color: white;
   font-family: 'Poppins';
   font-weight: bolder;
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
 .second-title {
@@ -104,24 +109,24 @@ ul {
   display: block;
 }
 
-.info {
-  margin-bottom: 5rem;
-}
+// .info {
+//   margin-bottom: 5rem;
+// }
 
-.footer {
-  background-color: #fff;
-  width: auto;
-  height: 21vh;
-  display: flex;
-  justify-content: space-around;
-  margin-left: -30px;
-}
+// .footer {
+//   background-color: #fff;
+//   width: auto;
+//   height: 21vh;
+//   display: flex;
+//   justify-content: space-around;
+//   margin-left: -30px;
+// }
 
-.footer-items {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-}
+// .footer-items {
+//   display: flex;
+//   flex-direction: column;
+//   margin-top: 1rem;
+// }
 
 .titles {
   font-family: 'Poppins';
@@ -161,13 +166,13 @@ ul {
   color: #48924F;
 }
 
-.landing-page .content .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 140px;
-  height: 71vh;
-}
+// .landing-page .content .container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 140px;
+//   height: 71vh;
+// }
 
 .landing-page .content .info h1 {
   color: #5d5d5d;
@@ -191,15 +196,24 @@ ul {
   background-color: #6c63ff;
 }
 
-.landing-page .content .image img {
-  max-width: 100%;
+
+.landing-img{
+  width: 55rem;
 }
 
 .image {
-  border-radius: 10px;
-  display: inline-block;
-  margin-bottom: 5rem;
+  display: flex;
+  justify-content: end;
+  // mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 75%, black 110%, transparent);
+  text-align: end;
   padding: 15px;
+
+}
+
+.login-button{
+  background: none;
+  border: none;
 }
 
 .logo {

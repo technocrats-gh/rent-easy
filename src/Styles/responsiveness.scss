@@ -1,4 +1,5 @@
-@media (max-width: 375px) {
+// Mobile screens
+@media (max-width: 767px) {
 
   /*HOMEPAGE PAGE */
   .searchInput {
@@ -49,14 +50,35 @@
   .saveEditBtn {
     margin-left: 16.5rem !important;
   }
+
+  .first-title{
+    font-size: 3rem;
+  }
+  .second-title{
+    font-size: 1.15rem;
+  }
+  .links li{
+    display: none;
+  }
+  .landing-img{
+    width: 20rem;
+  }
+  .logo-div {
+    justify-content: center;
+  }
 }
 
-/* Mobile screens*/
-@media (max-width: 425px) {
+
+
+
+
+
+/* Tablet screens*/
+@media (min-width: 768px) and (max-width: 991px){
 
   /*LANDING PAGE */
   .container {
-    background-color: rgba(0, 0, 255, 0.1);
+    // background-color: rgba(0, 0, 255, 0.1);
   }
 
   .landing-page .container {
@@ -69,26 +91,35 @@
   }
 
   .login-button {
+    // display: none;
+  }
+  .logo-div{
+    justify-content: center;
+  }
+  .links{
     display: none;
   }
-
   .landing-page header .logo {
     font-size: 18px;
     margin: 10px 0;
   }
 
-  .landing-page header .links {
-    display: flex;
-    gap: 2px;
-    text-align: center;
+  // .landing-page header .links {
+  //   display: flex;
+  //   gap: 2px;
+  //   text-align: center;
+  // }
+  .first-title{
+
+    font-size: 2rem;
   }
 
-  .info {
-    display: none;
-  }
+  // .info {
+  //   display: none;
+  // }
 
   .image {
-    display: none;
+    // display: none;
   }
 
   .foot {
@@ -166,13 +197,13 @@
 
 }
 
-/* Tablet screens */
-@media (min-width: 768px) {
+/* Laptops screens */
+@media (min-width: 992px) and (max-width: 1199px) {
 
   /*LANDING PAGE */
   .container {
-    background-color: rgba(255, 192, 203, 0.15);
-    width: 690px;
+    background-color: rgba(255, 192, 203, 0.5);
+    // width: 690px;
   }
 
   /*HOMEPAGE PAGE */
@@ -198,14 +229,17 @@
   .pro-heading {
     margin: 5rem 0 1rem 1rem;
   }
+  .land-btn{
+    margin-top: auto;
+  }
 }
 
-/* Small laptops */
-@media (min-width: 1024px) {
+/* Desktops */
+@media (min-width: 1200px) and (max-width:1439px ) {
 
   /*LANDING PAGE */
   .container {
-    background-color: rgba(165, 42, 42, 0.15);
+    // background-color: rgba(165, 42, 42, 0.15);
     width: 970px;
   }
 
@@ -235,7 +269,7 @@
 
   /*LANDING PAGE */
   .container {
-    background-color: rgba(0, 255, 255, 0.2);
+    // background-color: rgba(0, 255, 255, 0.2);
     width: 1800px;
   }
 
