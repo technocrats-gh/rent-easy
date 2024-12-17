@@ -58,7 +58,24 @@
   background-color: rgba(72, 146, 79, 0.08);
 }
 
-.hover-text {
+.hovered-text{
+  position: absolute;
+  top: 75%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  // color: rgb(65, 57, 57);
+  color: rgba(255, 255, 255, 1);
+  // background-color: rgba(0, 0, 0, 0.6); /* Optional: dark background for readability */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: none;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0; /* Start invisible */
+  transition: opacity 4s ease; /* Add transition */
+}
+
+.hover-text{
   position: absolute;
   top: 88%;
   left: 50%;
@@ -73,18 +90,43 @@
   transition: opacity 4s ease; /* Add transition */
 }
 
-.img-container:hover .hover-text {
+.img-container:hover .hover-text, .card-height:hover .hovered-text {
   opacity: 1;
   display: block;
 }
+
 .all-rights{
   font-family: 'Poppins';
   color: #fff;
   margin-left: auto;
 }
-
+.card-region{
+  font-size: 2rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.52);
+    padding: 3px;
+    border-radius: 5px;
+    color: #030303;
+    
+}
 .home-page{
+  position: relative; /* Ensures the pseudo-element is positioned properly */
   overflow: hidden;
+
+  &::before {
+    content: "";
+    background-image: url('../images/nice.jpg');
+    background-repeat: no-repeat;
+    background-position: center 0rem;
+    background-size: cover;
+    filter: blur(1px) opacity(0.05); /* Blur and opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send it behind the content */
+  }
 }
 
 .menubar{
@@ -92,39 +134,54 @@
   width: 100%;
   position: fixed;
   top:0;
+  left: 0;
   z-index: 1000;
 }
 
 .search-card{
   height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding-inline: 1rem;
+    border-radius: 5px;
+}
+// .p-dropdown {
+//   display: inline-flex;
+//   cursor: pointer;
+//   position: relative;
+//   user-select: none;
+//   margin: 0.7rem 0 0 1rem;
+// }
+// .p-dropdown .p-dropdown-trigger {
+//   color: #000000;
+//   width: 1.5rem;
+//   background-color: #dceaf7;
+//   border-top-right-radius: 0px;
+//   border-bottom-right-radius: 0px;
+// }
+// .svg.p-icon{
+//   visibility: visible;
+// }
+.card-height{
+  height: 10rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 5rem;
-  padding-inline: 1rem;
-  background-color: #d8ead5;
-  border-radius: 5px;
 }
-.p-dropdown {
-  display: inline-flex;
-  cursor: pointer;
-  position: relative;
-  user-select: none;
-  margin: 0.7rem 0 0 1rem;
+.big-text-style{
+  font-size: 3.5rem;
 }
-.p-dropdown .p-dropdown-trigger {
+.small-text-style{
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #000000;
-  width: 1.5rem;
-  background-color: #dceaf7;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-.svg.p-icon{
-  visibility: visible;
 }
 .searchInput {
-  height: 2.5rem;
-  width: 24rem;
+  height: 3.5rem;
+  width: 75rem;
   border: none;
   font-family: "Poppins";
   font-size: 0.8rem;
@@ -157,7 +214,7 @@
   width: 100%;
   height: 3.5rem;
   background-color: #c7c7c7;
-  margin-top: 9.5rem;
+  // margin-top: 9.5rem;
 }
 .profile-name{
   font-size: 16px;
@@ -171,7 +228,7 @@
   display: flex;
   gap: 28px;
   flex-wrap: wrap;
-  padding: 20px; /* Padding around the grid */
+  padding: 2rem 7rem; /* Padding around the grid */
 }
 .card {
     border-radius: 8px;
@@ -187,8 +244,13 @@
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Lift on hover */
+  transform:  translateY(-5px);
+  transition:  transform 0.3s ease-out;
 }
+// .card:hover ~ :not(:hover) {
+//   filter: saturate(0) contrast(1.2) blur(20px) brightness(0.5);
+//   transition:  filter 0.3s ease-out;
+// }
 
 .dialog-header{
   background-color: #b2ddb4;
@@ -247,14 +309,33 @@
   border: none;
 }
 .home-card{
-  background-color: #d8ead5;
-  height: auto;
+  margin-inline: 6rem;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.1)
+  // background-color: rgba(241, 172, 32, 0.1)
+
+
+}
+.center-text {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Align text content to the center */
+  height: 100%; /* Ensure div takes up full height for proper centering */
 }
 
-.display-card{
-  margin: 2rem 0 0 2rem;
-  padding: 1rem 0 0 0;
+.cities-div{
+  display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem 7rem;
 }
+
+// .display-card{
+//   margin: 2rem 0 0 0rem;
+//   padding: 1rem 0 0 0;
+// }
 .edit-upload-divs{
   width: 19rem;
     height: 14rem;
@@ -274,27 +355,29 @@
   margin: 1rem 0 1rem 6rem;
 }
 
-.agents-heading{
-  margin: 0rem 0 1rem 3rem;
-  font-family: 'Poppins';
-  color: #fff;
-}
+// .agents-heading{
+//   margin: 0rem 20rem 1rem 3rem;
+//   font-family: 'Poppins';
+//   color: #fff;
+// }
 .upload-divs{
-  width: 26rem;
-  height: 15rem;
-  background-color: #d3d6dd;
-  margin-left: 2rem;
-  border-radius: 10px;
-  border-bottom: 2rem solid gray;
+    width: 20rem;
+    height: 13rem;
+    background-color: #d3d6dd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
 .upload-title{
-  padding: 13.2rem 5rem 0rem 0.5rem;
   font-family: 'Poppins';
   font-weight: bold;
   color: #fff;
 }
 .upload-btn{
-  margin: 1rem 0 0 4.5rem;
+  margin: 5rem 0 0 0rem;
 }
 .upload-btn .p-button {
   background-color: #e9e6e6;
@@ -302,7 +385,7 @@
   border: none;
   border-radius: 7px;
   box-shadow: 0 0 0 0.04rem;
-  margin-left: 7rem;
+  // margin-left: 7rem;
 }
 
 .profile{
@@ -381,6 +464,11 @@
 /* Optional: Make dialog content slightly transparent */
 .blurry-dialog .p-dialog-content {
   backdrop-filter: blur(4px); /* Slight blur inside dialog */
+}
+
+.img-visible{
+  height: 20rem;
+  width: 29rem;
 }
 
 /* End Home Page */

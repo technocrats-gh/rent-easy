@@ -18,15 +18,17 @@ export const Listings = () => {
   return (
     <div>
       <div className='listings-card-main'>
-        <div style={{ display: 'flex' }}>
-          <h2 className='listing-heading'>My Apartment Listings</h2>
-          <Link to='/pages/agents'><Button label='Upload a new listing' className='listings' /> </Link>
+        <div className='flex' style={{ justifyContent: "space-between" }}>
+          <div className='flex'>
+            <h2 className='listing-heading'>My Apartment Listings</h2>
+            <Link to='/pages/UploadListing'><Button label='Upload a new listing' className='listings' /> </Link>
+          </div>
           <SearchBar listingPage={listingPage} listSearch={handleListingSearch} />
         </div>
         <Card className='listing-card'>
-          <div className='display-cards'>
+          {/* <div className='display-cards'> */}
             <CardTemp label={label} />
-          </div>
+          {/* </div> */}
         </Card>
       </div>
     </div>

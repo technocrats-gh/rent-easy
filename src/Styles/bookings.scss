@@ -1,0 +1,31 @@
+.bookings-main{
+  margin: 3rem 0 0 0;
+  height: 100vh;
+}
+
+.main-card{
+  height: 80vh;
+  width: 50rem;
+  margin: 10rem 35rem 3rem 35rem;
+}
+
+.tabClass:hover{
+  color: #000;
+  background-color: #c1e6ba;
+  border-radius: 15px;
+}
+// .tabClass:focus-visible{
+//   color: #c1e6ba;
+//   background-color: #000;
+// }
+.upload-button{
+  font-size: 0.8rem;
+    background-color: #c1e6ba;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 3px;
+    border: rgba(255, 255, 255, 0.3) 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0 1rem 0.5rem;
+}

@@ -1,0 +1,190 @@
+// .agents-card-main{
+//   background-image: url('../images/bg5.png');
+//   background-repeat: no-repeat;
+//   background-position: center 0rem;
+//   margin: 7rem 0rem 0rem 0rem;
+//   overflow: hidden;
+//   background-size: 109%;
+//   padding-inline: 1.5rem;
+// }
+
+.agents-card-main {
+  position: relative; /* Ensures the pseudo-element is positioned properly */
+  margin: 7rem 0rem 0rem 0rem;
+  overflow: hidden;
+  // height: auto;
+  height: 85vh;
+  padding-inline: 1.5rem;
+
+  // &::before {
+  //   content: "";
+  //   background-image: url('../images/uploadPage.jpg');
+  //   background-repeat: no-repeat;
+  //   background-position: center 0rem;
+  //   background-size: cover;
+  //   filter: blur(5px) opacity(0.7); /* Blur and opacity */
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: -1; /* Send it behind the content */
+  // }
+}
+
+.agents-heading{
+  margin: 0rem 20rem 1rem 3rem;
+  font-family: 'Poppins';
+  color: #fff;
+}
+
+// .agents-card-main {
+//   position: relative;
+//   margin: 7rem 0rem 0rem 0rem;
+//   overflow: hidden;
+//   padding-inline: 1.5rem;
+// }
+
+
+// .agents-card-main::before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-image: url('../images/bg5.png');
+//   background-repeat: no-repeat;
+//   background-position: center 38rem;
+//   background-size: 150%; /* Scales the background image */
+//   filter: blur(10px); /* Applies blur to the background image */
+//   z-index: -1; /* Ensures the background stays behind content */
+// }
+
+.agent-card{
+  height: auto;
+  width: 50rem;
+  margin: 0 35rem 3rem 35rem;
+}
+
+.numberOfPages{
+  background-color: #ebebeb;
+  border: rgba(255, 255, 255, 0.3) 2px solid;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+.last-container{
+  background-color: #d3d6dd;
+  width: 106rem;
+  height: 20rem;
+  margin: 2rem 1rem 0 4rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+.apt-info-text{
+  width: 30rem;
+}
+.apt-info{
+  margin: 1rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.label-txt{
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 10px;
+  margin-top: 1rem;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 0;
+}
+.nextBtn{
+  // background-color: rgba(255, 255, 255, 0.15);
+  // color: rgba(72, 146, 79, 0.6);
+  // padding: 5px;
+  // border: rgba(44, 44, 44, 0.4) 1px solid;
+  // border-radius: 5px;
+  // cursor: pointer;
+
+  border-radius: 7px;
+  padding: 7px 14px;
+  border: rgba(44, 44, 44, 0.4) 1px solid;
+  color: #48924F;
+  background-color: #fdfdfd;
+  font-weight: bolder;
+  font-size: 14px;
+  cursor: pointer;
+}
+.backBtn{
+  // background-color: rgba(255, 255, 255, 0.15);
+  // color: rgba(3, 3, 3, 0.6);
+  // padding: 5px;
+  // border: rgba(143, 1, 1, 0.5) 1px solid;
+  // border-radius: 5px;
+  // cursor: pointer;
+
+  border-radius: 7px;
+  padding: 7px 14px;
+  border: rgba(143, 1, 1, 0.5) 1px solid;
+  color: #3b3b3b;
+  background-color: #fdfdfd;
+  font-weight: bolder;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.upload-title{
+  font-family: 'Poppins';
+  font-weight: bold;
+  color: #fff;
+}
+.upload-btn{
+  margin: 3rem 0 0 0rem;
+}
+.upload-btn .p-button {
+  background-color: #e9e6e6;
+  color: #071a0d;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 0 0 0.04rem;
+  // margin-left: 7rem;
+}
+
+.upload-divs{
+  width: 14rem;
+  height: 12rem;
+  background-color: #d3d6dd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.agents-dropdown   {
+  margin: 0 !important;
+  width: 30rem;
+  height: 39px;
+}
+.listings{
+  margin: 0 0 1rem 1rem;
+  background-color: #ffffff;
+  color: #288728;
+  border-radius: 5px;
+  border:none;
+}
+// @media (max-width: 425px) {
+//   .agent-card {
+//       margin-left: 29px;
+//   }
+// }
+// @media (min-width:426px) and (max-width: 768px){
+//   .agent-card {
+//     margin-left: 8px;
+// }
+// }

@@ -11,8 +11,9 @@ import Layout from './components/Layout';
 import StartLogin from './components/StartLogin';
 import LandingPage from './components/landingPage';
 import HomePage from './components/Homepage/index'
-import { Agents } from './components/pages/agents';
+import { UploadListing } from './components/pages/uploadListing';
 import { Listings } from './components/pages/listings';
+import { Bookings } from './components/pages/bookings';
 import { Register } from './components/pages/register';
 import { SettingsProfile } from './components/pages/profile';
 import { Auth0Provider } from '@auth0/auth0-react';
@@ -50,7 +51,8 @@ root.render(
               <Route path='/' element={<Layout />}>
                 <Route path="/LogIn" element={<StartLogin />} />
                 <Route path="/HomePage" element={<HomePage />} />
-                <Route path="/pages/agents" element={<Agents />} />
+                <Route path="/pages/uploadListing" element={<UploadListing />} />
+                <Route path="/pages/bookings" element={<Bookings />} />
                 <Route path="/pages/listings" element={<Listings />} />
                 <Route path="/pages/register" element={<Register />} />
                 <Route path="/pages/profile" element={<SettingsProfile />} />

@@ -6,7 +6,8 @@ import '../Styles/LandingPage.scss'
 const StartLogin = () => {
   const { loginWithRedirect } = useAuth0();
 
-  return <button className="btn style-btn" onClick={() => loginWithRedirect()}>Log In</button>; 
+  return <div className="" onClick={() => loginWithRedirect()}>Log In</div>;
+  // return <button className="btn style-btn" onClick={() => loginWithRedirect()}>Log In</button>; 
 
 };
 

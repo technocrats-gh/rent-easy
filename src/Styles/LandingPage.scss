@@ -1,16 +1,23 @@
 /* Start Global Rules */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #78997b, transparent);
-}
+// html, body {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+// }
+// body {
+//   font-family: 'Poppins', sans-serif;
+//   // background-color: rgba(82, 44, 93, 0.5);
+//   background: linear-gradient(to bottom, rgba(255, 0, 150, 0.5),rgba(82, 44, 93, 0.5));
+//   // background: linear-gradient(180deg, #78997b, transparent);
+//   width: 100% !important;
+//   height: 100% !important;
+// }
 
 .landing-page{
   overflow: hidden;
   padding-inline: 1.5rem;
   height: 100vh;
-  // background-image: ;
 }
 
 .logo-txt {
@@ -71,21 +78,25 @@ ul {
 
 
  .links {
-  display: flex;
-  margin-left: auto;
-  justify-content: end;
-  align-items: center;
-  font-family: 'Poppins';
+  // display: flex;
+  // margin-left: auto;
+  // // justify-content: end;
+  // align-items: center;
+  // font-family: 'Poppins';
+  // column-gap: 0.8rem;
+}
+.contact-land{
+  cursor: pointer;
 }
 
-.links li {
-  color: #FFF;
-  cursor: pointer;
-  transition: .3s;
-}
-.links li:hover{
-  color: #48924F;
-}
+// .links li {
+//   color: #FFF;
+//   cursor: pointer;
+//   transition: .3s;
+// }
+// .links li:hover{
+//   color: #48924F;
+// }
 
 .btn {
   border: none;
@@ -165,7 +176,29 @@ ul {
 .landing-page header .links li:not(:last-child):hover {
   color: #48924F;
 }
+.view-list{
+  font-size: 1.15rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border: rgba(255, 255, 255, 0.3) 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.land-btn{
+  background-color: rgba(72, 146, 79, 0.3);
+  border: rgba(72, 146, 79, 0.15) 2px solid;
+  padding-inline: 10px;
+  color: rgba(255, 255, 255, 0.65);
+}
+.land-btn:hover{
+  background-color: rgba(255, 255, 255, 0.15);
+  border: rgba(255, 255, 255, 0.15) 2px solid;
+  color: rgba(72, 146, 79, 0.6);
+  transition: 0.25s ease-in;
+}
 // .landing-page .content .container {
 //   display: flex;
 //   align-items: center;
@@ -198,17 +231,10 @@ ul {
 
 
 .landing-img{
-  width: 55rem;
-}
-
-.image {
-  display: flex;
-  justify-content: end;
-  // mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 75%, black 110%, transparent);
-  text-align: end;
-  padding: 15px;
-
+  width: 123rem;
+  // height: 39rem;
+    filter: opacity(0.2);
+    margin: 0 -3rem 0 -3rem;
 }
 
 .login-button{

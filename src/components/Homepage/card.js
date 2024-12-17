@@ -12,13 +12,17 @@ import { Dialog } from 'primereact/dialog';
 import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
 import { FileUpload } from 'primereact/fileupload'
+import { Paginator } from 'primereact/paginator';
 import { CustomDialog } from '../../utils/dialog.js'
+
 
 const ListingCard = (props) => {
   const { label } = props;
   const [visible, setVisible] = useState(false);
   const [selectedCardId, setSelectedCardId] = useState(null);
   const [expandCard, setExpandCard] = useState(false);
+  const [first, setFirst] = useState(0);
+  const [rows, setRows] = useState(10);
 
   const [selectedValue, setSelectedValue] = useState(null);
   // Dummy data for listings
@@ -34,6 +38,8 @@ const ListingCard = (props) => {
     // Add more listings as needed
   ];
 
+  const currentListings = listings.slice(first, first + rows);
+
   const opts = [
     { id: 1, name: "Bathroom" },
     { id: 2, name: "Hall" },
@@ -46,15 +52,14 @@ const ListingCard = (props) => {
     { id: 9, name: "Other" },
   ]
 
-  const shownCards = listings.map((item) => (
+  const onPageChange = (event) => {
+    setFirst(event.first);
+    setRows(event.rows);
+  };
+
+  const shownCards = currentListings.map((item) => (
     <div key={item.id} className='card-div'>
       <Card className="card overflow-hidden grid">
-        {/* <div className='col-12 ' onClick={() => {
-          setExpandCard(true); setSelectedCardId(item.id);
-        }}>
-          <img alt="Cover image" src={item.image} className='card-img' />
-        </div>
-        <div className="hover-text">Click to view more</div> */}
         <div className="col-12 img-container" onClick={() => {
           setExpandCard(true); setSelectedCardId(item.id);
         }}>
@@ -121,6 +126,8 @@ const ListingCard = (props) => {
     </Dialog>
 
     <CustomDialog {...{ expandCard, setExpandCard, closeCardExpanded, listings, selectedCardId }} />
+
+    <Paginator first={first} className='ml-auto' rows={rows} totalRecords={listings.length} onPageChange={onPageChange} />
   </div>
 };
 

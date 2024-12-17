@@ -116,13 +116,13 @@ export const CustomDialog = (props) => {
 
       {showExpandedCard.map(({ visible, onHide, header, data }, i) => <Dialog key={i} visible={visible} header={header} onHide={onHide} className="blurry-dialog">
         <div className='grid'>
-          <div className='col-8 '>
+          <div className='col-12 md:col-8 lg:col-8 '>
             <div className="flex justify-content-start">
               {data?.filter(({ id }) => id === selectedCardId).map(({ image }) => <img src={image} alt='alt-img' className='card-img img-visible' />)}
               {/* <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} /> */}
             </div> 
           </div>
-          <div className='col-4 p-3 rating-side'>
+          <div className='col-12 md:col-4 lg:col-4 p-3 rating-side'>
             <p>Give a Review</p>
             <div className="flex justify-content-start mb-3">
               <Rating value={state.value} onChange={(e) => setState((state) => ({ ...state, value: e.value }))} cancel={false} />

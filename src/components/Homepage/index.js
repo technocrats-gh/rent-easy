@@ -2,39 +2,40 @@ import React, { useState } from 'react';
 import SearchBar from './searchBar';
 import CardTemp from './card';
 import { Dropdown } from 'primereact/dropdown';
+import syi from '../../images/nice.jpg'
+import oti from '../../images/uploadPage.jpg'
+import volta from '../../images/volta.jpg'
+import Savannah from '../../images/savana.jpg'
+import ashanti from '../../images/ashanti.jpg'
+import BE from '../../images/Bonoeast.png'
+
 import { Card } from 'primereact/card';
-import { Paginator } from 'primereact/paginator';
+// import { Paginator } from 'primereact/paginator';
+// import { DataTable } from 'primereact/datatable';
 import 'primereact/resources/themes/saga-blue/theme.css';
+// import 'primereact/resources/themes/lara-light-indigo/theme.css'; // Example theme
 import '../../Styles/responsiveness.scss'
 import '../../Styles/HomePage.scss'
 
 function HomePage() {
-  const [selectedCity, setSelectedCity] = useState(null);
-  const [first, setFirst] = useState(0);
-  const [rows, setRows] = useState(10);
-
-  const onPageChange = (event) => {
-    setFirst(event.first);
-    setRows(event.rows);
-  };
 
   const cities = [
-    { name: 'North East', code: 'NST' },
-    { name: 'Western North', code: 'WNT' },
-    { name: 'Ahafo', code: 'AHA' },
-    { name: 'Oti', code: 'OTI' },
-    { name: 'Bono East', code: 'BES' },
-    { name: 'Savannah', code: 'SAV' },
-    { name: 'Western ', code: 'WES' },
-    { name: 'Volta', code: 'VOL' },
-    { name: 'Upper West', code: 'UPW' },
-    { name: 'Upper East', code: 'UPE' },
-    { name: 'Northern', code: 'NOR' },
-    { name: 'Greater Accra', code: 'GRA' },
-    { name: 'Eastern', code: 'EAS' },
-    { name: 'Central', code: 'CEN' },
-    { name: 'Ashanti', code: 'ASH' },
-    { name: 'Bono', code: 'BO' },
+    { name: 'North East', code: 'NST', cityImg: syi },
+    { name: 'Western North', code: 'WNT', cityImg: null },
+    { name: 'Ahafo', code: 'AHA', cityImg: null },
+    { name: 'Oti', code: 'OTI', cityImg: oti },
+    { name: 'Bono East', code: 'BES', cityImg: BE },
+    { name: 'Savannah', code: 'SAV', cityImg: Savannah },
+    { name: 'Western ', code: 'WES', cityImg: null },
+    { name: 'Volta', code: 'VOL', cityImg: volta },
+    { name: 'Upper West', code: 'UPW', cityImg: null },
+    { name: 'Upper East', code: 'UPE', cityImg: null },
+    { name: 'Northern', code: 'NOR', cityImg: null },
+    { name: 'Greater Accra', code: 'GRA', cityImg: null },
+    { name: 'Eastern', code: 'EAS', cityImg: null },
+    { name: 'Central', code: 'CEN', cityImg: null },
+    { name: 'Ashanti', code: 'ASH', cityImg: ashanti },
+    { name: 'Bono', code: 'BO', cityImg: null },
   ];
 
   // Handle search queries
@@ -45,21 +46,32 @@ function HomePage() {
   return (
     <div className="home-page">
       <div className='search-card grid'>
-        <div className='dropbox-div mb-2'>
-          <Dropdown value={selectedCity} onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" editable
-            placeholder="Select a Region" />
-        </div>
-        <div>
-          <SearchBar onSearch={handleSearch} />
-        </div>
+        <SearchBar onSearch={handleSearch} />
       </div>
 
-      <Card className='home-card'>
-        <div className='display-card'>
+      <Card className='home-card grid'>
+        <div className='col-12 center-text'>
+          <p className='font-bold big-text-style mb-0 mt-0'>Rent across the country</p>
+          <p className='mt-0 small-text-style'>Apartments from all 16 regions readily available</p>
+        </div>
+        <section className='grid col-12 cities-div'>
+          {cities.map(({ name, cityImg }, i) =>
+            <div key={i} className='card card-height col-3' style={{
+              backgroundImage: `url(${cityImg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              cursor: 'pointer'
+            }}>
+              <p className='mb-0 mt-0 card-region'>{name}</p>
+              <p className='hovered-text mt-0'>View all apartments</p>
+            </div>)}
+        </section>
+        <div className='col-12 mt-3'>
+          <p className='center-text small-text-style'>Browse through to find the best apartment for you</p>
           <CardTemp />
         </div>
       </Card>
-      <Paginator first={first} rows={rows} totalRecords={120} onPageChange={onPageChange} />
+
     </div>
 
   );

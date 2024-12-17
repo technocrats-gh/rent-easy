@@ -12,7 +12,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 export const Header = () => {
-  const alreadyLoggedAsAgent = localStorage.getItem("AgentId_Entered")
+  // const alreadyLoggedAsAgent = localStorage.getItem("AgentId_Entered")
   const [viewContact, setViewContact] = useState(false);
   const [viewAgent, setViewAgent] = useState(false);
   const op = useRef(null);
@@ -27,19 +27,24 @@ export const Header = () => {
       <img src={logo} alt='Renteasy_logo' className="img-logo" />
     </div>
   }
-  const handleAgentClick = () => {
-    if (alreadyLoggedAsAgent) {
-      navigate('/pages/listings');
-    } else {
-      setViewAgent(true)
-    }
+  // const handleAgentClick = () => {
+  //   if (alreadyLoggedAsAgent) {
+  //     navigate('/pages/listings');
+  //   } else {
+  //     setViewAgent(true)
+  //   }
+  // }
+
+  const handleProfile = () => {
+    navigate("/pages/profile");
+    op.current.hide();
   }
   const menuEnd = () => {
     return <div className="profile" style={{ cursor: 'pointer', marginTop: '2.1rem' }}>
       <ul className="links">
-        <li onClick={() => navigate("/HomePage")}>Home</li>
-        <li onClick={handleAgentClick}> Agents</li>
-        <li onClick={() => setViewContact(true)}>Contact Us</li>
+        <li onClick={() => navigate("/HomePage")} className="align-content-center">Home</li>
+        {/* <li onClick={handleAgentClick} className="align-content-center"> Agents</li> */}
+        <li onClick={() => setViewContact(true)} className="align-content-center">Contact Us</li>
         {isLoading ? <span>Loading...</span>
           : isAuthenticated ? <span onClick={(e) => op.current.toggle(e)} className="userProfile"><Profile /> </span>
             : <li className="login"> <StartLogin /></li>}
@@ -51,8 +56,12 @@ export const Header = () => {
           <span className='profile-email'>{user?.email}</span>
         </span>
         <br />
+        {/* <div className='profile-name'>My Bookings</div> */}
         <div style={{ display: "flex", flexDirection: "column", marginTop: "3px" }}>
-          <div className="profile-btn" onClick={() => navigate("/pages/profile")}>Profile</div>
+          <div className="profile-btn" onClick={() => { op.current.hide(); navigate("/pages/profile"); }}>Profile</div>
+          <div className="profile-btn" onClick={() => { op.current.hide(); navigate("/pages/UploadListing"); }}>Upload Listing</div>
+          <div className="profile-btn" onClick={() => { op.current.hide(); navigate("/pages/bookings"); }}>My Bookings</div>
+          <div className="profile-btn" onClick={() => { op.current.hide(); navigate("/pages/listings"); }}>My Listings</div>
           <span className="logout"><LogoutButton /> </span>
         </div>
       </OverlayPanel>

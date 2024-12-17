@@ -21,7 +21,7 @@ function SearchBar({ onSearch, listingPage, listSearch }) {
         onChange={(e) => setQuery(e.target.value)}
         className={listingPage ? "search-listings" : 'searchInput'}
       />
-      {query && <i className='search-button pi pi-search search-icon' type="submit" onClick={handleSearch}></i>}
+      <i className='search-button pi pi-search search-icon' type="submit" onClick={handleSearch}></i>
     </form>
   );
 }

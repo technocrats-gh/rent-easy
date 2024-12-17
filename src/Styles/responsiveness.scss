@@ -4,18 +4,48 @@
   /*HOMEPAGE PAGE */
   .searchInput {
     height: 2.5rem;
-    width: 10rem;
+    width: 20rem;
   }
 
-  .p-dropdown {
-    margin: 0.5rem 0 0 0rem;
-    width: 11rem;
+  // .p-dropdown {
+  //   margin: 0.5rem 0 0 0rem;
+  //   width: 11rem;
+  // }
+
+  .home-card {
+    margin-inline: 0rem;
+  }
+  .center-text {
+    margin-left: 0.5rem;
+    justify-content: start;
+    align-items: start;
+  }
+  .big-text-style {
+    font-size: 2rem;
+  }
+  .cities-div {
+    padding: 2rem 3rem;
+  }
+  .small-text-style {
+    font-size: 1.15rem;
+    color: #f0f0f0;
+  }
+  .card-grid-container {
+    padding: 2rem 2.5rem;
+  }
+  .card-height {
+    width: 156px;
   }
 
   .links {
     column-gap: 0.45rem;
     font-size: 14px;
   }
+  .img-visible {
+    height: 15rem;
+    width: 17rem;
+  }
+ 
 
   .p-menubar .p-menubar-button {
     visibility: hidden;
@@ -26,7 +56,7 @@
   }
 
   .display-card {
-    margin: 2rem 0 0 0.15rem;
+    margin: 2rem 0 0 1rem;
   }
 
   .footer-socials {
@@ -50,21 +80,51 @@
   .saveEditBtn {
     margin-left: 16.5rem !important;
   }
-
+  .buttons-container{
+    margin-bottom: 15rem;
+  }
   .first-title{
     font-size: 3rem;
   }
   .second-title{
     font-size: 1.15rem;
+    text-align: center;
   }
-  .links li{
+  .contact-land{
     display: none;
+    // display: flex;
   }
+
   .landing-img{
-    width: 20rem;
+    width: 33rem;
   }
   .logo-div {
-    justify-content: center;
+    // justify-content: center;
+  }
+  .listing-view{
+    padding: 5px 40px;
+  }
+  .blurry-dialog{
+    width: 20rem;
+  }
+
+  //Upload Listing page
+  .agent-card {
+    margin: 1rem 35rem 3rem 0rem !important;
+    width: 23rem !important;
+  }
+  .apt-info {
+    margin: 1rem 0 0 0rem !important;
+  }
+  .apt-info-text, .agents-dropdown {
+    width: 16rem !important;
+  }
+  .agents-heading {
+    margin: 0rem !important;
+  }
+  .upload-divs {
+    width: 17rem !important;
+    height: 9rem !important;
   }
 }
 
@@ -94,7 +154,7 @@
     // display: none;
   }
   .logo-div{
-    justify-content: center;
+    // justify-content: center;
   }
   .links{
     display: none;
@@ -109,9 +169,23 @@
   //   gap: 2px;
   //   text-align: center;
   // }
-  .first-title{
 
+  .buttons-container{
+    margin-bottom: 5rem;
+  }
+  .landing-img {
+    width: 50rem;
+  }
+  .view-list {
+    font-size: 1.5rem;
+  }
+  .first-title{
+    font-size: 5rem;
+    text-align: center;
+  }
+  .second-title{
     font-size: 2rem;
+    text-align: center;
   }
 
   // .info {
@@ -204,6 +278,20 @@
   .container {
     background-color: rgba(255, 192, 203, 0.5);
     // width: 690px;
+  }
+  .first-title {
+    font-size: 4rem;
+    text-align: center;
+  }
+  .second-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .view-list {
+    font-size: 2rem;
+  }
+  .contact-land {
+    font-size: 1.5rem;
   }
 
   /*HOMEPAGE PAGE */
